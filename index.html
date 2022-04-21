@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./vendor/normalize.css" rel="stylesheet"/>
+    <link href="./pages/index.css" rel="stylesheet"/>
+    <title>Mesto</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
+    </header>
+    <main class="content">
+      <section class="profile">        
+        <img src="./images/profile-avatar.jpg" alt="Портрет Жак-Ив Кусто" class="profile__avatar">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <p class="profile__subtitle">Исследователь океана</p>
+        <img src="./images/icon-add.svg" alt="Кнопка добавить" class="profile__add-button popup_opened">
+      </section>
+      <section class="popup">   
+        <div class="popup__container">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input class="popup__name" type="text" placeholder="Жак-Ив Кусто">
+          <input class="popup__post" type="text" placeholder="Исследователь океана">
+          <button class="">Сохранить</button>
+          <img src="./images/icon-close.svg" alt="Кнопка закрыть" class="popup__close-button">
+        </div>
+      </section>
+      <section class="places__cards">
+        <ul class="places__cards">
+          <li class="places__item">            
+            <img src="./images/photo-karachayevsk.jpg" alt="Карачаевск" class="places__image">   
+            <h2 class="places__title">Карачаевск</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li>   
+          <li class="places__item">            
+            <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">   
+            <h2 class="places__title">Гора Эльбрус</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li>  
+          <li class="places__item">            
+            <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">   
+            <h2 class="places__title">Домбай</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li>  
+          <li class="places__item">            
+            <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">   
+            <h2 class="places__title">Гора Эльбрус</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li> 
+          <li class="places__item">            
+            <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">   
+            <h2 class="places__title">Домбай</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li> 
+          <li class="places__item">            
+            <img src="./images/photo-karachayevsk.jpg" alt="Карачаево-Черкесск" class="places__image">   
+            <h2 class="places__title">Карачаево-Черкесск</h2>                
+            <img src="./images/icon-like.svg" alt="Иконка Мне нравится" class="places__icon">        
+          </li>                      
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022. Антон Самсонов</p>
+    </footer>
+  </body>
+</html>
