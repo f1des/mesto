@@ -9,6 +9,9 @@
   background-color: transparent;
   background: url(../../../images/icon-close.svg) center no-repeat;
   background-size: contain;
-  transition: opacity .3s linear;
   cursor: pointer;
+}
+
+.popup__close-btn:hover {
+  opacity: .6;
 }

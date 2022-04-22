@@ -10,4 +10,9 @@
   padding: 14px;
   border-radius: 2px;
   margin: 48px 0 0;
+  cursor: pointer;
+}
+
+.popup__submit:hover {
+  opacity: .8;
 }

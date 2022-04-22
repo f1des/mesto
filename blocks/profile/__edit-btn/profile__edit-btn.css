@@ -6,6 +6,10 @@
   background-color: transparent;
   background: url(../../../images/icon-karandash.svg) center no-repeat;
   background-size: 10px;
-  transition: opacity .3s linear;
+  transition: opacity .8s linear;
   cursor: pointer;
+}
+
+.profile__edit-btn:hover {
+  opacity: .6;
 }

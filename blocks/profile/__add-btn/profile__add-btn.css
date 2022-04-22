@@ -6,6 +6,10 @@
   background-color: transparent;
   background: url(../../../images/icon-add.svg) center no-repeat;
   background-size: 22px;
-  transition: opacity .3s linear;
+  transition: opacity .8s linear;
   cursor: pointer;    
+}
+
+.profile__add-btn:hover {
+  opacity: .6;
 }

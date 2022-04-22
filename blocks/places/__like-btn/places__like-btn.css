@@ -9,3 +9,7 @@
   transition: opacity .3s linear;
   cursor: pointer;
 }
+
+.places__like-btn:hover {
+  opacity: .5;
+}
