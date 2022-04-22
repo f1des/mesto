@@ -1,0 +1,8 @@
+.places__wrapper {
+  /*margin: 25px 15px 31px 21px;*/
+  display: flex;
+  margin: 0px 15px 0 21px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}

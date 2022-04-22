@@ -1,0 +1,11 @@
+.places__like-btn {
+  width: 22px;
+  height: 19px;
+  margin-left: auto;
+  border: 1px solid #fff;
+  background-color: transparent;
+  background: url(../../../images/icon-like.svg) center no-repeat;
+  background-size: contain;
+  transition: opacity .3s linear;
+  cursor: pointer;
+}
