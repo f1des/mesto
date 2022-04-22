@@ -1,0 +1,11 @@
+.profile__add-btn {
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  border: 1px solid #fff;
+  background-color: transparent;
+  background: url(../../../images/icon-add.svg) center no-repeat;
+  background-size: 22px;
+  transition: opacity .3s linear;
+  cursor: pointer;    
+}
