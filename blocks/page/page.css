@@ -3,10 +3,11 @@
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 200px;
   box-sizing: border-box;
   font-family: 'Inter', Arial, sans-serif;
   color: #fff;
-  background-color: #2A2C2F;
+  background-color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

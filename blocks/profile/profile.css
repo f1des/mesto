@@ -1,4 +1,8 @@
 .profile {
+  max-height: 120px;
+  display: flex;
+  text-align: left;
+  align-items: center;
 }
 
 @media screen and (max-width: 1024px) {
