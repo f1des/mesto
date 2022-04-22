@@ -1,4 +1,8 @@
 .places__item {
+  background-color: #fff;
+  max-width: 282px;
+  max-height: 361px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1024px) {

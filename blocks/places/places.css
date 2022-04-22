@@ -1,4 +1,6 @@
 .places {
+  margin: 51px 0 67px;
+  padding: 0;
 }
 
 @media screen and (max-width: 1024px) {
