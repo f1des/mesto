@@ -1,13 +1,14 @@
-.popup {
-    /*display: none;*/
+.popup {  
+    display: flex;  
+    justify-content: center;
     z-index: 100;
+    position: fixed;
     top: 0;
     left: 0;       
     background-color: rgba(0, 0, 0, .5);
-    /*opacity: 0;*/
-    /*visibility: hidden;*/
+    opacity: 0;
+    visibility: hidden;
     overflow-y: auto;
     overflow-x: hidden;
     transition: all 0.8s ease 0s;
-
 }
