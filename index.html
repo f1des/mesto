@@ -8,87 +8,89 @@
     <title>Место</title>
   </head>
   <body class="page">
-    <header class="header">
-      <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
-    </header>
-
-    <main class="content">
-      <section class="profile">     
-        <img src="./images/profile-avatar.jpg" alt="Портрет Жак-Ив Кусто" class="profile__image">
-        <div class="profile__about">
-          <div class="profile__wrapper">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" title="Редактировать профиль" class="profile__edit-btn"></button>
+    <div class="container">
+      <header class="header">
+        <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
+      </header>
+  
+      <main class="content">
+        <section class="profile">     
+          <img src="./images/profile-avatar.jpg" alt="Портрет Жак-Ив Кусто" class="profile__image">
+          <div class="profile__about">
+            <div class="profile__wrapper">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button type="button" title="Редактировать профиль" class="profile__edit-btn"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <button type="button" title="Добавить фото" class="profile__add-btn" ></button>
+        </section>   
+  
+        <section class="places">
+          <ul class="places__cards">
+            <li class="places__item">            
+              <img src="./images/photo-karachayevsk.jpg" alt="Карачаевск" class="places__image">  
+              <div class="places__wrapper">
+                <h2 class="places__title">Карачаевск</h2>                       
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
+              </div>              
+            </li>   
+            <li class="places__item">            
+              <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
+              <div class="places__wrapper">
+                <h2 class="places__title">Гора Эльбрус</h2>                
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
+              </div>                      
+            </li>  
+            <li class="places__item">            
+              <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
+              <div class="places__wrapper">
+                <h2 class="places__title">Домбай</h2>                
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
+              </div>                        
+            </li>  
+            <li class="places__item">            
+              <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
+              <div class="places__wrapper">
+                <h2 class="places__title">Гора Эльбрус</h2>                
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
+              </div>                       
+            </li> 
+            <li class="places__item">            
+              <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
+              <div class="places__wrapper">
+                <h2 class="places__title">Домбай</h2>                
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button>  
+              </div>                      
+            </li> 
+            <li class="places__item">            
+              <img src="./images/photo-karachayevsk.jpg" alt="Карачаево-Черкессия" class="places__image">
+              <div class="places__wrapper">              
+                <h2 class="places__title">Карачаево-Черкессия</h2>                
+                <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
+              </div>      
+            </li>                      
+          </ul>
+        </section>
+      </main>
+  
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2022. Антон Самсонов</p>
+      </footer>
+  
+      <section class="popup">   
+        <div class="popup__container">
+          <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
+          <div class="popup__wrapper">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input class="popup__text popup__text_type_name" type="text" placeholder="Имя" minlength="2" maxlength="20">
+            <input class="popup__text popup__text_type_post" type="text" placeholder="О себе" minlength="2" maxlength="40">
+            <button type="submit" class="popup__submit-btn popup__submit-btn_action_add" disabled="disabled">Сохранить</button>     
+          </div>
         </div>
-        <button title="Добавить фото" class="profile__add-btn" ></button>
-      </section>   
-
-      <section class="places">
-        <ul class="places__cards">
-          <li class="places__item">            
-            <img src="./images/photo-karachayevsk.jpg" alt="Карачаевск" class="places__image">  
-            <div class="places__wrapper">
-              <h2 class="places__title">Карачаевск</h2>                       
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-            </div>              
-          </li>   
-          <li class="places__item">            
-            <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
-            <div class="places__wrapper">
-              <h2 class="places__title">Гора Эльбрус</h2>                
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-            </div>                      
-          </li>  
-          <li class="places__item">            
-            <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
-            <div class="places__wrapper">
-              <h2 class="places__title">Домбай</h2>                
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-            </div>                        
-          </li>  
-          <li class="places__item">            
-            <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
-            <div class="places__wrapper">
-              <h2 class="places__title">Гора Эльбрус</h2>                
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
-            </div>                       
-          </li> 
-          <li class="places__item">            
-            <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
-            <div class="places__wrapper">
-              <h2 class="places__title">Домбай</h2>                
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button>  
-            </div>                      
-          </li> 
-          <li class="places__item">            
-            <img src="./images/photo-karachayevsk.jpg" alt="Карачаево-Черкессия" class="places__image">
-            <div class="places__wrapper">              
-              <h2 class="places__title">Карачаево-Черкессия</h2>                
-              <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
-            </div>      
-          </li>                      
-        </ul>
       </section>
-    </main>
-
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2022. Антон Самсонов</p>
-    </footer>
-
-    <section class="popup">   
-      <div class="popup__container">
-        <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
-        <div class="popup__wrapper">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__text popup__text_type_name" type="text" placeholder="Имя" minlength="2" maxlength="20">
-          <input class="popup__text popup__text_type_post" type="text" placeholder="О себе" minlength="2" maxlength="40">
-          <button type="submit" class="popup__submit-btn popup__submit-btn_action_add" disabled="disabled">Сохранить</button>     
-        </div>
-      </div>
-    </section>
-
-    <script src="./script/index.js"></script>
+  
+      <script src="./script/index.js"></script>
+    </div>
   </body>
 </html>

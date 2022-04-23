@@ -1,22 +1,23 @@
 .profile {
-  max-height: 120px;
   max-width: 880px;;
   display: flex;
   text-align: left;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 1024px) {
-  .intro {
+  .profile {
   }
 }
 
 @media screen and (max-width: 768px) {
-  .intro {
+  .profile {
   }
 }
 
 @media screen and (max-width: 320px) {
-  .intro {
+  .profile {
+    text-align: center;
   }
 }
