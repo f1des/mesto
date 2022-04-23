@@ -9,9 +9,9 @@
 color: #545454;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   .footer__copyright {
-    padding: 48px 0 24px;
-    line-height: 14px;  
+    font-size: 14px;
+    line-height: 17px;  
   }
 }
