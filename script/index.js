@@ -7,16 +7,15 @@ const addBtnPlace = profile.querySelector('.profile__add-btn');
 const popups = document.querySelector('.popup');
 const closeBtn = popups.querySelector('.popup__close-btn');
 
-function openPopup() {
+
+
+editBtn.addEventListener('click', function () {
   popups.classList.add('popup_opened');
-}
+});
 
-function closePopup() {
+closeBtn.addEventListener('click', function () {
   popups.classList.remove('popup_opened');
-}
-
-editBtn.addEventListener('click', openPopup);
-closeBtn.addEventListener('click', closePopup);
+});
 
 // // Находим форму в DOM
 // let formElement = // Воспользуйтесь методом querySelector()
