@@ -13,7 +13,7 @@
 @import url(../blocks/profile/__image/profile__image.css);
 @import url(../blocks/profile/__about/profile__about.css);
 @import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__description/profile__description.css);
+@import url(../blocks/profile/__job/profile__job.css);
 @import url(../blocks/profile/__add-btn/profile__add-btn.css);
 @import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
 @import url(../blocks/profile/__wrapper/profile__wrapper.css);
@@ -35,7 +35,7 @@
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__text/_type/popup__text_type_name.css);
-@import url(../blocks/popup/__text/_type/popup__text_type_description.css);
+@import url(../blocks/popup/__text/_type/popup__text_type_job.css);
 @import url(../blocks/popup/__submit/popup__submit-btn.css);
 @import url(../blocks/popup/__submit/_action/popup__submit-btn_action_add.css);
 @import url(../blocks/popup/__title/popup__title.css);

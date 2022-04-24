@@ -1,13 +1,16 @@
 //Получаем все элементы классов с помощью querySelector и присваиваем к константам
 const profile = document.querySelector('.profile');
 const profileName = profile.querySelector('.profile__name');
+const profileJob = profile.querySelector('.profile__job');
 const editBtn = profile.querySelector('.profile__edit-btn');
 const addBtnPlace = profile.querySelector('.profile__add-btn');
 
 const popups = document.querySelector('.popup');
 const closeBtn = popups.querySelector('.popup__close-btn');
+const textName = popups.querySelector('#name');
+const textJob = popups.querySelector('#job');
 
-
+const submitBtn = document.querySelector('.popup__submit-btn');
 
 editBtn.addEventListener('click', function () {
   popups.classList.add('popup_opened');
@@ -17,26 +20,30 @@ closeBtn.addEventListener('click', function () {
   popups.classList.remove('popup_opened');
 });
 
-// // Находим форму в DOM
-// let formElement = // Воспользуйтесь методом querySelector()
-// // Находим поля формы в DOM
-// let nameInput = // Воспользуйтесь инструментом .querySelector()
-// let jobInput = // Воспользуйтесь инструментом .querySelector()
+//Проверка на валидность
+function anchorFromProfile () {
+  if (textName.value !== profileName.textContent) {
+    textName.value = profileName.textContent;
+  }
+  if (textJob.value !== profileJob.textContent) {
+    textJob.value = profileJob.textContent;
+  }
+};
 
-// // Обработчик «отправки» формы, хотя пока
-// // она никуда отправляться не будет
-// function formSubmitHandler (evt) {
-//     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-//                                                 // Так мы можем определить свою логику отправки.
-//                                                 // О том, как это делать, расскажем позже.
+editBtn.addEventListener('click', function () {
+  if ((textName.value === profileName.textContent) || (textJob.value === profileJob.textContent)) {
+    submitBtn.classList.add('popup__submit-btn_action_add')
+    } else {
 
-//     // Получите значение полей jobInput и nameInput из свойства value
+});
 
-//     // Выберите элементы, куда должны быть вставлены значения полей
+editBtn.addEventListener('click', anchorFromProfile);
 
-//     // Вставьте новые значения с помощью textContent
-// }
+// Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+function formSubmitHandler (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  anchorFromProfile();
+}
 
-// // Прикрепляем обработчик к форме:
-// // он будет следить за событием “submit” - «отправка»
-// formElement.addEventListener('submit', formSubmitHandler);
+// // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+submitBtn.addEventListener('submit', formSubmitHandler);
