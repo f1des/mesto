@@ -12,8 +12,4 @@
 // let page = document.querySelector('.page');
 // let openP = page.querySelector('.popup');
 
-let btn = document.querySelector('.profile__add-btn');
-let par = document.querySelector('.popup');
-btn[0].onclick = function() {
-  par[0].classList.add("popup_opened");
-}
+const 
