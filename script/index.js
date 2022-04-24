@@ -1,15 +1,6 @@
-// let page = document.querySelector('.page');
-// let popup_opened = page.querySelector('.popup');
+//Получаем все элементы классов с помощью querySelector и присваиваем к константам
+const profile = document.querySelector('.profile');
+const profileName = profile.querySelector('.profile__name');
+const btnEdit = profile.querySelector('.profile__edit-btn');
+const btnAddPlace = profile.querySelector('.profile__add-btn');
 
-// function openPopap() {
-//   /*popup_opened.setAttribute('disabled', true); */
-//   popup_opened.classList.add('.popup_opened');
-
-//   console.log('Мы кликнули по элементу');
-// }
-
-// // popup_opened.addEventListener('click', openPopap);
-// let page = document.querySelector('.page');
-// let openP = page.querySelector('.popup');
-
-const 
