@@ -47,8 +47,8 @@ popupDataSave.addEventListener("submit", saveDataProfile);
 
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
 function formSubmitHandler(evt) {
-  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  anchorFromProfile();
+  //evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  saveDataProfile(evt);
 }
 
 // // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»

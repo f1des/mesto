@@ -16,3 +16,8 @@
 .popup__submit-btn:hover {
   opacity: .8;
 }
+
+.popup__submit-btn:disabled { 
+  background-color: #fff;
+  color: #000;
+}
