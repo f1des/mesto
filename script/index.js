@@ -31,7 +31,7 @@ function anchorFormProfile () {
   if (textJob.value !== profileJob.textContent) {
     textJob.value = profileJob.textContent;
   }
-  //submitBtn.disabled = true;
+  submitBtn.disabled = true;
 }
 
 editBtn.addEventListener('click', anchorFormProfile);
@@ -50,12 +50,9 @@ popupFormEdit.addEventListener('submit', saveDataProfile);
 //Функция проверки на ввод
 function checkName()  {
   if ((textName.value !== profileName.textContent) || (textJob.value !== profileJob.textContent)) {
-    //submitBtn.removeAttribute('disabled');
     submitBtn.disabled = false;
   }    
 }
-
-
 
 // popupFormEdit.querySelectorAll((input) => {
 //   input.addEventListener('input', checkName)
