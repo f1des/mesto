@@ -9,7 +9,7 @@ const popups = document.querySelector('.popup');
 const closeBtn = popups.querySelector('.popup__close-btn');
 const textName = popups.querySelector('#name');
 const textJob = popups.querySelector('#job');
-const popupDataSave = popups.querySelector(".popup__wrapper");
+const popupFormEdit = popups.querySelector('.popup__form');
 
 const submitBtn = document.querySelector('.popup__submit-btn');
 
@@ -24,32 +24,35 @@ function closePopup () {
 closeBtn.addEventListener('click', closePopup);
 
 //Проверка на валидность
-function anchorFromProfile () {
+function anchorFormProfile () {
   if (textName.value !== profileName.textContent) {
     textName.value = profileName.textContent;
   }
   if (textJob.value !== profileJob.textContent) {
     textJob.value = profileJob.textContent;
   }
-};
-
-editBtn.addEventListener('click', anchorFromProfile);
-
-// Сохраняем данные профиля при закрытии попапа
-function saveDataProfile(evt) {
-  evt.preventDefault();
-  profileName.textContent = textName.value;
-  profileJob.textContent = textJob.value;
-  closePopup;
+  submitBtn.disabled = true || false;
 }
 
-//popupDataSave.addEventListener("submit", saveDataProfile);
+editBtn.addEventListener('click', anchorFormProfile);
 
-// Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
-//function formSubmitHandler(evt) {
-  //evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  //saveDataProfile(evt);
-//}
+// Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет.
+function saveDataProfile(evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  profileName.textContent = textName.value;
+  profileJob.textContent = textJob.value;
+  closePopup(popups);
+}
 
 // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-submitBtn.addEventListener('submit', saveDataProfile);
+popupFormEdit.addEventListener('submit', saveDataProfile);
+
+//Функция проверки на ввод
+function checkName()  {
+  if (textName.value !== profileName.textContent)
+    submitBtn.removeAttribute('disabled');
+  else
+    submitBtn.removeAttribute('disabled','disable');
+}
+
+checkName;
