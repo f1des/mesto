@@ -43,13 +43,13 @@ function saveDataProfile(evt) {
   closePopup;
 }
 
-popupDataSave.addEventListener("submit", saveDataProfile);
+//popupDataSave.addEventListener("submit", saveDataProfile);
 
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
-function formSubmitHandler(evt) {
+//function formSubmitHandler(evt) {
   //evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  saveDataProfile(evt);
-}
+  //saveDataProfile(evt);
+//}
 
-// // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-submitBtn.addEventListener('submit', formSubmitHandler);
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+submitBtn.addEventListener('submit', saveDataProfile);
