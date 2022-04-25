@@ -1,10 +1,5 @@
-@media screen and (min-width: 1280px) {
-  .content {
-  }  
-}
-
 @media screen and (max-width: 320px) {
-  .content {   
+  .content {
     max-width: 282px;
   }
 }

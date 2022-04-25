@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     const popups = document.querySelector('.popup');
     const closeBtn = popups.querySelector('.popup__close-btn');
     const form = popups.querySelector('.popup__form');
-    const { name:textName, job:textJob } = form.elements
+    const { name:textName, job:textJob } = form.elements;
 
     const submitBtn = document.querySelector('.popup__submit-btn');
 

@@ -7,7 +7,7 @@
   background: url(../../../images/icon-add.svg) center no-repeat;
   background-size: 22px;
   transition: opacity .8s linear;
-  cursor: pointer;    
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {

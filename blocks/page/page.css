@@ -13,11 +13,6 @@
   text-rendering: optimizeLegibility;
 }
 
-@media screen and (max-width: 1280px) {
-  .page {    
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .page {
     padding: 0 88px;
@@ -25,7 +20,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  .page {  
+  .page {
     padding: 0 19px;
   }
 }
