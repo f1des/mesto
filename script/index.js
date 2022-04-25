@@ -54,6 +54,6 @@ function checkName()  {
   }    
 }
 
-// popupFormEdit.querySelectorAll((input) => {
-//   input.addEventListener('input', checkName)
-// })
+popupFormEdit.querySelectorAll('input').forEach((input) => {
+  input.addEventListener('input', checkName)
+})
