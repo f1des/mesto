@@ -1,19 +1,9 @@
 .profile {
-  max-width: 880px;;
+  max-width: 880px;
   display: flex;
   text-align: left;
   align-items: center;
   flex-wrap: wrap;
-}
-
-@media screen and (max-width: 1024px) {
-  .profile {
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .profile {
-  }
 }
 
 @media screen and (max-width: 320px) {

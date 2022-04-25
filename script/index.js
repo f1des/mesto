@@ -36,7 +36,7 @@ function anchorFormProfile () {
 
 editBtn.addEventListener('click', anchorFormProfile);
 
-// Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет.
+// Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
 function saveDataProfile(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   profileName.textContent = textName.value;
@@ -49,8 +49,9 @@ popupFormEdit.addEventListener('submit', saveDataProfile);
 
 //Функция проверки на ввод
 function checkName()  {
-  if (textName.value !== profileName.textContent)
+  if ((textName.value !== profileName.textContent) || (textJob.value !== profileJob.textContent)) {
     submitBtn.removeAttribute('disabled');
+  }    
   else
     submitBtn.removeAttribute('disabled','disable');
 }
