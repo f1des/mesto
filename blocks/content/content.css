@@ -1,5 +1,15 @@
+.content {
+  padding: 0 200px;
+}
+
 @media screen and (max-width: 320px) {
   .content {
     max-width: 282px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content {    
+    padding: 0 19px;
   }
 }

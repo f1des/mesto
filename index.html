@@ -6,12 +6,12 @@
     <link href="./pages/index.css" rel="stylesheet"/>
     <title>Место</title>
   </head>
-  <body class="page">
+  <body class="page">    
+    <header class="header">
+      <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
+    </header>
+
     <div class="container">
-      <header class="header">
-        <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
-      </header>
-  
       <main class="content">
         <section class="profile">     
           <img src="./images/profile-avatar.jpg" alt="Портрет Жак-Ив Кусто" class="profile__image">
@@ -76,20 +76,20 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022. Антон Самсонов</p>
       </footer>
-  
-      <section class="popup">   
-        <div class="popup__container">
-          <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
-          <form class="popup__form" action="#">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <input name="name" class="popup__text popup__text_type_name" type="text" placeholder="Имя" minlength="2" maxlength="20">
-            <input name="job" class="popup__text popup__text_type_job" type="text" placeholder="О себе" minlength="2" maxlength="40">
-            <button type="submit" class="popup__submit-btn">Сохранить</button>     
-          </form>
-        </div>
-      </section>
-  
-      <script src="./scripts/index.js"></script>
-    </div>
+    </div>   
+
+    <section class="popup">   
+      <div class="popup__container">
+        <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
+        <form class="popup__form" action="#">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input name="name" class="popup__text popup__text_type_name" type="text" placeholder="Имя" minlength="2" maxlength="20">
+          <input name="job" class="popup__text popup__text_type_job" type="text" placeholder="О себе" minlength="2" maxlength="40">
+          <button type="submit" class="popup__submit-btn">Сохранить</button>     
+        </form>
+      </div>
+    </section>
+
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
