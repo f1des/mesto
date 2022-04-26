@@ -8,6 +8,13 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 44px;
+  }
+}
+
+
 @media screen and (max-width: 425px) {
   .container {    
     padding: 0 19px;

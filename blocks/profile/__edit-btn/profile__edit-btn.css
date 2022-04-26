@@ -1,6 +1,6 @@
 .profile__edit-btn {
   display: block;
-  margin-left: 18px;
+  margin-left: 25px;
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
@@ -8,6 +8,7 @@
   background-size: 10px;
   transition: opacity .8s linear;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .profile__edit-btn:hover {
@@ -18,5 +19,6 @@
   .profile__edit-btn {
     width: 18px;
     height: 18px;
+    background-size: 7.5px;
   }
 }

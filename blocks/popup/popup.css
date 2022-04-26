@@ -9,3 +9,9 @@
   visibility: hidden;
   transition: all 0.8s ease 0s;
 }
+
+@media screen and (max-width: 425px) {
+  .popup {
+    padding: 0 19px;
+  }
+}

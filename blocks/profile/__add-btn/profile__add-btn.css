@@ -14,14 +14,20 @@
   opacity: .6;
 }
 
-@media (min-width: 570px) and (max-width: 766px) {
+@media (min-width: 768px) {
+  .profile__add-btn {
+    width: 150px;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 766px) {
   .profile__add-btn { 
     margin-top: 25px;
   }
 }
 
-@media (min-width: 768px){
+@media screen and (max-width: 425px){
   .profile__add-btn {
-    width: 150px;
+    background-size: 16px;
   }
 }

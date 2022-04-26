@@ -3,18 +3,3 @@
   width: 100%;
   border-radius: 10px;
 }
-
-@media screen and (max-width: 1024px) {
-  .places__item {
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .places__item {      
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .places__item {
-  }
-}
