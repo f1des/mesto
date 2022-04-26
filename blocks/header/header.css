@@ -2,12 +2,20 @@
   margin: 45px 0 40px;
   max-width: 880px;
   min-height: 74px;
+  padding: 0 200px;
+}
+
+.header:after {
+  content: "";
+  display: block;
+  margin: 37px 0 30px;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
 @media screen and (max-width: 425px) {
   .header {
     margin: 28px 0 31.6px;
+    padding: 0;
   }
 }
 

@@ -3,7 +3,6 @@
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 200px;
   box-sizing: border-box;
   font-family: 'Inter', Arial, sans-serif;
   color: #fff;
@@ -11,10 +10,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-@media screen and (max-width: 1024px) {
-  .page {
-    padding: 0 88px;
-  }
 }
