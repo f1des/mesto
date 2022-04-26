@@ -3,13 +3,6 @@
   padding: 0 18px 0 30px;
 }
 
-@media screen and (max-width: 897px) {
-  .profile__about {  
-    margin: 0 auto;
-    width: auto;
-  }
-}
-
 @media screen and (max-width: 425px) {
   .profile__about {
     margin: 0 auto;

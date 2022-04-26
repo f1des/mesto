@@ -6,5 +6,6 @@
   inset: 0;
   background-color: rgba(0, 0, 0, .5);
   opacity: 0;
-  visibility: hidden;пше 
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
 }
