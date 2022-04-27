@@ -11,6 +11,7 @@
   border-radius: 2px;
   margin: 45px 0 0;
   cursor: pointer;
+  border: 0;
 }
 
 .popup__submit-btn:hover {
@@ -20,4 +21,11 @@
 .popup__submit-btn:disabled { 
   background-color: #fff;
   color: #000;
+}
+
+@media screen and (max-width: 425px) {
+  .popup__submit-btn {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

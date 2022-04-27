@@ -1,5 +1,5 @@
 .places__wrapper {
-  height: 79px;
+  min-height: 79px;
   margin: 0 19px 0 21px;
   display: flex;
   justify-content: space-between;
