@@ -1,7 +1,7 @@
-window.addEventListener('DOMContentLoaded', function init () {
-  window.removeEventListener('DOMContentLoaded', init);
+import initialCards from '/initialCards.js';
 
-  import initialCards from './initialCards.js';
+window.addEventListener('DOMContentLoaded', function init () {
+  window.removeEventListener('DOMContentLoaded', init);  
 
   const profile = document.querySelector('.profile');
   const profileName = profile.querySelector('.profile__name');

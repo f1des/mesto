@@ -25,4 +25,4 @@ const initialCards = [
   }
 ];
 
-export default {initialCards} from './index.js';
+export default {initialCards};
