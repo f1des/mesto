@@ -1,4 +1,4 @@
-import initialCards from '/initialCards.js';
+//import initialCards from './initialCards.js'
 
 window.addEventListener('DOMContentLoaded', function init () {
   window.removeEventListener('DOMContentLoaded', init);  
@@ -7,13 +7,14 @@ window.addEventListener('DOMContentLoaded', function init () {
   const profileName = profile.querySelector('.profile__name');
   const profileJob = profile.querySelector('.profile__job');
   const editBtn = profile.querySelector('.profile__edit-btn');
+  const addBtn = profile.querySelector('.profile__add-btn');
 
   const popups = document.querySelector('.popup');
   const closeBtn = popups.querySelector('.popup__close-btn');
   const form = popups.querySelector('.popup__form');
-  const { name:textName, job:textJob } = form.elements;
+  const { name:textName, job:textJob, link:textLink } = form.elements;
 
-  function showPopup () {
+  function showEditProfilePopup () {
     popups.classList.add('popup_opened');
     if (textName.value !== profileName.textContent) {
       textName.value = profileName.textContent;
@@ -22,8 +23,19 @@ window.addEventListener('DOMContentLoaded', function init () {
       textJob.value = profileJob.textContent;
     }
   }
+
+  function showAddProfilePopup () {
+    popups.classList.add('popup_opened');
+    if (textName.value !== profileName.textContent) {
+      textName.value = profileName.textContent;
+    }
+    if (textLink.value !== profileLink.textContent) {
+      textLink.value = profileLink.textContent;
+    }
+  }
   
-  editBtn.addEventListener('click', showPopup);
+  editBtn.addEventListener('click', showEditProfilePopup);
+  addBtn.addEventListener('click', showAddProfilePopup);
 
   function closePopup () {
     popups.classList.remove('popup_opened');
