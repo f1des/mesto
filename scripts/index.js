@@ -9,32 +9,48 @@ window.addEventListener('DOMContentLoaded', function init () {
   const editBtn = profile.querySelector('.profile__edit-btn');
   const addBtn = profile.querySelector('.profile__add-btn');
 
+  const editPopup = document.querySelector('#popupEditProfile');
+
+  const addPopup = document.querySelector('#popupAddPhoto');
+  const formAddPopup = addPopup.querySelector('.popup__form');
+
   const popups = document.querySelector('.popup');
   const closeBtn = popups.querySelector('.popup__close-btn');
-  const form = popups.querySelector('.popup__form');
-  const { name:textName, job:textJob, link:textLink } = form.elements;
+  //const form = popups.querySelector('.popupEditProfile');
+  const popupFormEdit = popups.querySelector('.popup__form');
+  const popupFormAdd = popups.querySelector('.popup__form');
+
+  const textName = popups.querySelector('#name');
+  const textJob = popups.querySelector('#job');
+  const textLink = popups.querySelector('#link');
+
+  //Проверка на валидность
+function anchorFormProfile () {
+  if (textName.value !== profileName.textContent) {
+    textName.value = profileName.textContent;
+  }
+  if (textJob.value !== profileJob.textContent) {
+    textJob.value = profileJob.textContent;
+  }
+  submitBtn.disabled = true;
+}
+
+  function showPopup () {
+    popups.classList.add('popup_opened');
+  }
 
   function showEditProfilePopup () {
-    popups.classList.add('popup_opened');
-    if (textName.value !== profileName.textContent) {
-      textName.value = profileName.textContent;
-    }
-    if (textJob.value !== profileJob.textContent) {
-      textJob.value = profileJob.textContent;
-    }
-  }
-
-  function showAddProfilePopup () {
-    popups.classList.add('popup_opened');
-    if (textName.value !== profileName.textContent) {
-      textName.value = profileName.textContent;
-    }
-    if (textLink.value !== profileLink.textContent) {
-      textLink.value = profileLink.textContent;
-    }
+    showPopup(editPopup);
+    anchorFormProfile;
   }
   
-  editBtn.addEventListener('click', showEditProfilePopup);
+  editBtn.addEventListener('click', showEditProfilePopup);  
+
+  function showAddProfilePopup () {
+    formAddPopup.reset();
+    showPopup(addPopup);
+  }  
+  
   addBtn.addEventListener('click', showAddProfilePopup);
 
   function closePopup () {
@@ -52,5 +68,5 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
   // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-  form.addEventListener('submit', saveDataProfile);
+  popupFormEdit.addEventListener('submit', saveDataProfile);
 })
