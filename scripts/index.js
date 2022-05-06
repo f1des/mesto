@@ -17,8 +17,9 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   // Объявления для формы редактирования и добавления карточек
   const formEditProfile = popups.querySelector('.popup__form');
+  const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = popups.querySelector('.popup__form');
-  const { name:textName, job:textJob, title:textTitle, link:textLink } = form.elements;
+  const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
   function showPopup (popups) {
     popups.classList.add('popup_opened');
@@ -41,7 +42,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   editBtn.addEventListener('click', showEditProfilePopup);  
 
   function showAddProfilePopup () {
-    form.reset(); // Обнуляем поля формы
     showPopup(addPopup);
   }  
   
