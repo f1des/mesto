@@ -10,54 +10,48 @@ window.addEventListener('DOMContentLoaded', function init () {
   const addBtn = profile.querySelector('.profile__add-btn');
 
   const editPopup = document.querySelector('#popupEditProfile');
-
   const addPopup = document.querySelector('#popupAddPhoto');
-  const formAddPopup = addPopup.querySelector('.popup__form');
 
   const popups = document.querySelector('.popup');
   const closeBtn = popups.querySelector('.popup__close-btn');
-  //const form = popups.querySelector('.popupEditProfile');
-  const popupFormEdit = popups.querySelector('.popup__form');
-  const popupFormAdd = popups.querySelector('.popup__form');
 
+  // Объявления для формы редактирования
+  const formEditPopup = popups.querySelector('.popup__form');
   const textName = popups.querySelector('#name');
   const textJob = popups.querySelector('#job');
+
+  // Объявления для формы добавления карточек
+  const formAddPopup = popups.querySelector('.popup__form');  
   const textLink = popups.querySelector('#link');
+  const textTitle = popups.querySelector('#title');
 
-  //Проверка на валидность
-function anchorFormProfile () {
-  if (textName.value !== profileName.textContent) {
-    textName.value = profileName.textContent;
-  }
-  if (textJob.value !== profileJob.textContent) {
-    textJob.value = profileJob.textContent;
-  }
-  submitBtn.disabled = true;
-}
-
-  function showPopup () {
+  function showPopup (popups) {
     popups.classList.add('popup_opened');
   }
 
-  function showEditProfilePopup () {
+  function closePopup (popups) {
+    popups.classList.remove('popup_opened');
+  }
+
+  function showEditProfilePopup () {   
     showPopup(editPopup);
-    anchorFormProfile;
+    if (textName.value !== profileName.textContent) {
+      textName.value = profileName.textContent;
+    }
+    if (textJob.value !== profileJob.textContent) {
+      textJob.value = profileJob.textContent;
+    }
   }
   
   editBtn.addEventListener('click', showEditProfilePopup);  
 
   function showAddProfilePopup () {
-    formAddPopup.reset();
+    formAddPopup.reset(); // Обнуляем поля формы
     showPopup(addPopup);
   }  
   
   addBtn.addEventListener('click', showAddProfilePopup);
-
-  function closePopup () {
-    popups.classList.remove('popup_opened');
-  }
-
-  closeBtn.addEventListener('click', closePopup);
+  closeBtn.addEventListener('click', closePopup(popups));
 
   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
@@ -68,5 +62,6 @@ function anchorFormProfile () {
   }
 
   // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-  popupFormEdit.addEventListener('submit', saveDataProfile);
+  formEditPopup.addEventListener('submit', saveDataProfile);
+  formAddPopup.addEventListener('submit', saveDataProfile);
 })

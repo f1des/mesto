@@ -78,7 +78,7 @@
       </footer>
     </div>   
 
-    <section class="popup" id="popupEditProfile">   
+    <section id="popupEditProfile" class="popup">   
       <div class="popup__container">
         <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
         <form class="popup__form" name="popupEditProfile" action="#">
@@ -90,13 +90,13 @@
       </div>
     </section>
 
-    <section class="popup" id="popupAddPhoto">   
+    <section id="popupAddPhoto" class="popup">   
       <div class="popup__container">
         <button type="button" title="Закрыть popup" class="popup__close-btn"></button> 
         <form class="popup__form" name="popupAddPhoto" action="#">
           <h2 class="popup__title">Новое место</h2>
-          <input name="name" class="popup__text" type="text" placeholder="Название" minlength="2" maxlength="40">
-          <input name="link" class="popup__text" type="text" placeholder="Ссылка на картинку" minlength="2" maxlength="70">
+          <input name="title" class="popup__text" type="text" placeholder="Название" minlength="2" maxlength="40">
+          <input name="link" class="popup__text" type="url" placeholder="Ссылка на картинку" minlength="2" maxlength="70">
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
       </div>
