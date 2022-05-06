@@ -29,34 +29,45 @@ window.addEventListener('DOMContentLoaded', function init () {
     popups.classList.remove('popup_opened');
   }
 
-  function showEditProfilePopup () {   
-    showPopup(editPopup);
+  const modifyDataInProfile = () => {
     if (textName.value !== profileName.textContent) {
       textName.value = profileName.textContent;
     }
     if (textJob.value !== profileJob.textContent) {
       textJob.value = profileJob.textContent;
     }
+  };
+
+  function showEditProfilePopup () {   
+    showPopup(editPopup);
+    modifyDataInProfile();
   }
   
-  editBtn.addEventListener('click', showEditProfilePopup);  
+  editBtn.addEventListener('click', showEditProfilePopup);
+  //closeBtn.addEventListener('click', closePopup);
 
   function showAddProfilePopup () {
     showPopup(addPopup);
   }  
   
   addBtn.addEventListener('click', showAddProfilePopup);
-  closeBtn.addEventListener('click', closePopup);
+  //closeBtn.addEventListener('click', closePopup);
 
   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     profileName.textContent = textName.value;
     profileJob.textContent = textJob.value;
-    closePopup(popups);
+    closePopup;
+  }
+
+   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+   function saveDataPhoto(evt) {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+    closePopup;
   }
 
   // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
   formEditProfile.addEventListener('submit', saveDataProfile);
-  formAddPhoto.addEventListener('submit', saveDataProfile);
+  formAddPhoto.addEventListener('submit', saveDataPhoto);
 })
