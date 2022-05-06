@@ -15,21 +15,16 @@ window.addEventListener('DOMContentLoaded', function init () {
   const popups = document.querySelector('.popup');
   const closeBtn = popups.querySelector('.popup__close-btn');
 
-  // Объявления для формы редактирования
-  const formEditPopup = popups.querySelector('.popup__form');
-  const textName = popups.querySelector('#name');
-  const textJob = popups.querySelector('#job');
-
-  // Объявления для формы добавления карточек
-  const formAddPopup = popups.querySelector('.popup__form');  
-  const textLink = popups.querySelector('#link');
-  const textTitle = popups.querySelector('#title');
+  // Объявления для формы редактирования и добавления карточек
+  const formEditProfile = popups.querySelector('.popup__form');
+  const formAddPhoto = popups.querySelector('.popup__form');
+  const { name:textName, job:textJob, title:textTitle, link:textLink } = form.elements;
 
   function showPopup (popups) {
     popups.classList.add('popup_opened');
   }
 
-  function closePopup (popups) {
+  function closePopup () {
     popups.classList.remove('popup_opened');
   }
 
@@ -46,12 +41,12 @@ window.addEventListener('DOMContentLoaded', function init () {
   editBtn.addEventListener('click', showEditProfilePopup);  
 
   function showAddProfilePopup () {
-    formAddPopup.reset(); // Обнуляем поля формы
+    form.reset(); // Обнуляем поля формы
     showPopup(addPopup);
   }  
   
   addBtn.addEventListener('click', showAddProfilePopup);
-  closeBtn.addEventListener('click', closePopup(popups));
+  closeBtn.addEventListener('click', closePopup);
 
   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
@@ -62,6 +57,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
   // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-  formEditPopup.addEventListener('submit', saveDataProfile);
-  formAddPopup.addEventListener('submit', saveDataProfile);
+  formEditProfile.addEventListener('submit', saveDataProfile);
+  formAddPhoto.addEventListener('submit', saveDataProfile);
 })
