@@ -12,14 +12,15 @@ window.addEventListener('DOMContentLoaded', function init () {
   const editPopup = document.querySelector('#popupEditProfile');
   const addPopup = document.querySelector('#popupAddPhoto');
 
+  const closeBtn = document.querySelectorAll('.popup');
   const popups = document.querySelector('.popup');
-  const closeBtn = popups.querySelector('.popup__close-btn');
+  //const closeBtn = popups.querySelector('.popup__close-btn');
 
   // Объявления для формы редактирования и добавления карточек
   const formEditProfile = popups.querySelector('.popup__form');
   const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = popups.querySelector('.popup__form');
-  const { title:textTitle, link:textLink } = formAddPhoto.elements;
+  //const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
   function showPopup (popups) {
     popups.classList.add('popup_opened');
@@ -36,22 +37,19 @@ window.addEventListener('DOMContentLoaded', function init () {
     if (textJob.value !== profileJob.textContent) {
       textJob.value = profileJob.textContent;
     }
-  };
+  }
 
   function showEditProfilePopup () {   
     showPopup(editPopup);
     modifyDataInProfile();
   }
-  
-  editBtn.addEventListener('click', showEditProfilePopup);
-  //closeBtn.addEventListener('click', closePopup);
 
   function showAddProfilePopup () {
     showPopup(addPopup);
   }  
   
+  editBtn.addEventListener('click', showEditProfilePopup);
   addBtn.addEventListener('click', showAddProfilePopup);
-  //closeBtn.addEventListener('click', closePopup);
 
   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
@@ -70,4 +68,16 @@ window.addEventListener('DOMContentLoaded', function init () {
   // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
   formEditProfile.addEventListener('submit', saveDataProfile);
   formAddPhoto.addEventListener('submit', saveDataPhoto);
+
+  //Функция делегирования событий
+  document.querySelectorAll('.popup__close-btn').forEach(item => {
+    item.addEventListener('click', () => {
+      closePopup();
+      console.log('1');
+    });
+  });
+  
+
+
+
 })
