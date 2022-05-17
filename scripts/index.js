@@ -12,8 +12,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   const editPopup = document.querySelector('#popupEditProfile');
   const addPopup = document.querySelector('#popupAddPhoto');
 
-  const closeBtn = document.querySelectorAll('.popup__close-btn');
-
   const popups = document.querySelectorAll('.popup');
   // Объявления для формы редактирования и добавления карточек
   const formEditProfile = document.querySelector('.popup__form');
@@ -55,26 +53,39 @@ window.addEventListener('DOMContentLoaded', function init () {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     profileName.textContent = textName.value;
     profileJob.textContent = textJob.value;
-    closePopup(popups);
+    closePopup(document.querySelector('.popup'));
   }
 
    // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
    function saveDataPhoto(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    closePopup(popups);
+    evt.preventDefault();
+    closePopup;
   }
 
-  // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
+  // Прикрепляем обработчики к форме: он будет следить за событием “submit” - «отправка»
   formEditProfile.addEventListener('submit', saveDataProfile);
   formAddPhoto.addEventListener('submit', saveDataPhoto);
 
-  //Функция делегирования событий
+  //Функция делегирования событий для закрытий попапа
   popups.forEach((popup) => {
     popup.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('popup__close-btn')) {
         closePopup(popup);
       }
     });
+  });
+
+  function addLike (evt) {
+    evt.target.classList.toggle('places__like-btnactive');
+  }
+
+  function delLike (evt) {
+    evt.target.closest('.places').remove();
+  }
+
+  //Функция проставления лайка
+  document.querySelector('.places__like-btn').addEventListener('click', function (evt) {
+    evt.target.classList.toggle('places__like-btn_active');
   });
 
 })

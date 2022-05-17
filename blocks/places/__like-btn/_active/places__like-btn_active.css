@@ -1,3 +1,7 @@
-.places__like-btn_action {
-  background-color: #000;
+.places__like-btn_active {
+  background: url(../../../../images/icon-like_active.svg) center no-repeat;
+}
+
+.places__like-btn:hover {
+  opacity: 1;
 }

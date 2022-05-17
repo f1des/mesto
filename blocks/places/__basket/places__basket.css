@@ -1,0 +1,15 @@
+.places__basket {
+  position: absolute;
+    width: 18px;
+    height: 19px;
+    border: 0;
+    background: url(../../../images/basket.svg) center no-repeat;
+    background-size: contain;
+    transition: opacity .3s linear;
+    cursor: pointer;
+    margin: 20px 0 0 244px;
+}
+
+.places__basket:hover {
+  opacity: .5;
+}
