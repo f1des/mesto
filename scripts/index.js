@@ -19,6 +19,8 @@ window.addEventListener('DOMContentLoaded', function init () {
   const formAddPhoto = document.querySelector('.popup__form');
   const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
+  const Like = document.querySelectorAll('.places__like-btn');
+
   function showPopup (popups) {
     popups.classList.add('popup_opened');
   }
@@ -75,17 +77,11 @@ window.addEventListener('DOMContentLoaded', function init () {
     });
   });
 
-  function addLike (evt) {
-    evt.target.classList.toggle('places__like-btnactive');
-  }
-
-  function delLike (evt) {
-    evt.target.closest('.places').remove();
-  }
-
   //Функция проставления лайка
-  document.querySelector('.places__like-btn').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('places__like-btn_active');
+  Like.forEach((likeBtn) => {
+    likeBtn.addEventListener('click', (evt) => {
+      evt.target.classList.toggle('places__like-btn_active');
+    });
   });
 
 })
