@@ -11,6 +11,9 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   const editPopup = document.querySelector('#popupEditProfile');
   const addPopup = document.querySelector('#popupAddPhoto');
+  const photoPopup = document.querySelector('#popupShowPhoto');
+  const imgPopup = photoPopup.querySelector('.places__image');
+  const figcaptionImgPopup = photoPopup.querySelector('.popup__figcaption');
 
   const popups = document.querySelectorAll('.popup');
   // Объявления для формы редактирования и добавления карточек
@@ -50,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   editBtn.addEventListener('click', showEditProfilePopup);
   addBtn.addEventListener('click', showAddPhotoPopup);
 
-  // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+  // Сохраняем данные профиля при закрытии попапа редактьирования профиля. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     profileName.textContent = textName.value;
@@ -58,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     closePopup(document.querySelector('.popup'));
   }
 
-   // Сохраняем данные профиля при закрытии попапа. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+   // Сохраняем данные профиля при закрытии попапа добавления карточки.
    function saveDataPhoto(evt) {
     evt.preventDefault();
     closePopup;
@@ -83,5 +86,15 @@ window.addEventListener('DOMContentLoaded', function init () {
       evt.target.classList.toggle('places__like-btn_active');
     });
   });
+
+  //Функция открытия попапа для img
+  function popupShowPhoto () {    
+    imgPopup.src = evt.target.src;
+    figcaptionImgPopup.textContent = evt.target.alt;
+    imgPopup.alt = evt.target.alt;
+    showPopup(photoPopup);
+  }
+
+  addBtn.addEventListener('click', showAddPhotoPopup);
 
 })
