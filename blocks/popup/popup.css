@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, .5);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s ease 0s;
+  transition: opacity .7s linear, visibility .7s linear;
 }
 
 @media screen and (max-width: 425px) {

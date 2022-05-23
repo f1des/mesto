@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   const editPopup = document.querySelector('#popupEditProfile');
   const addPopup = document.querySelector('#popupAddPhoto');
   const photoPopup = document.querySelector('#popupShowPhoto');
-  const imgPopup = photoPopup.querySelector('.places__image');
+  const imgItem =  photoPopup.querySelector('.places__image');
   const figcaptionImgPopup = photoPopup.querySelector('.popup__figcaption');
 
   const popups = document.querySelectorAll('.popup');
@@ -88,13 +88,19 @@ window.addEventListener('DOMContentLoaded', function init () {
   });
 
   //Функция открытия попапа для img
-  function popupShowPhoto () {    
-    imgPopup.src = evt.target.src;
+  function popupShowPhoto (evt) {
+    imgItem.src = evt.target.src;
     figcaptionImgPopup.textContent = evt.target.alt;
-    imgPopup.alt = evt.target.alt;
+    imgItem.alt = evt.target.alt;
     showPopup(photoPopup);
   }
 
-  addBtn.addEventListener('click', showAddPhotoPopup);
+  imgItem.addEventListener('click', popupShowPhoto);
+  
+    //Функция открытие изоюражения
+    // imgItem.forEach((image) => {
+    //   image.addEventListener('click', popupShowPhoto);
+    //   });
+    // });
 
 })
