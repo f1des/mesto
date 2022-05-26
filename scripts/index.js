@@ -22,13 +22,15 @@ window.addEventListener('DOMContentLoaded', function init () {
   const formEditProfile = document.querySelector('.popup__form');
   const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = document.querySelector('.popup__form');
-  // const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
 
   const likeCard = document.querySelectorAll('.places__like-btn');
 
   const delCard = document.querySelectorAll('.places__basket');
 
+  const nameNewCard = document.querySelector('.popup__text-title'); // edit
+  const linkNewCard = document.querySelector('.popup__text-url');   // edit
+ 
   function showPopup (popups) {
     popups.classList.add('popup_opened');
   }
@@ -120,32 +122,60 @@ window.addEventListener('DOMContentLoaded', function init () {
   deleteCard();
 
   //Добавление новых карточек на страницу ERR
-  // function createCard (item) {
-  //   const name = item.name;
-  //   const link = item.link;
-  //   const templates = document.querySelector('.template').textContent.querySelector('.card').cloneNode(true);
-  //   const nameCardTemplate = templates.querySelector('.places__title');
-  //   const imgCardTemplate =  templates.querySelector('.places__image');
-  //   const likeCardTemplate = templates.querySelector('.places__like-btn');
-  //   const delCardTemplate = templates.querySelector('.places__basket');
-  //   likeCardTemplate.addEventListener('click', deleteCard);
-  //   delCardTemplate.addEventListener('click', putLike);
-  //   imgCardTemplate.addEventListener('click', popupShowPhoto);
-  //   nameCardTemplate.textContent = name;
-  //   imgCardTemplate.src = link;
-  //   imgCardTemplate.alt = name;
-  //   containerCardItems.append(templates);
-  // }
+  const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
 
-  // // Функция создания карточек
-  // function AddCardHandler() {
-  //   evt.preventDefault();
-  //   //createCard({link: linkNewCard.value, name: nameNewCard.value});
-  //   closePopup(formAddPhoto);
-  //   evt.target.reset();
+  initialCards.forEach(createCard);
 
-  //   formHandlerAddCard.addEventListener('submit', AddCardHandler);
-  // }
+  function createCard ({name, link}) {
+    const template = document.querySelector('.template__cards').content.querySelector('.places__item').cloneNode(true);
+    const nameCardTemplate = template.querySelector('.places__title');//
+    const imgCardTemplate =  template.querySelector('.places__image');//
+    const likeCardTemplate = template.querySelector('.places__like-btn');//
+    const delCardTemplate = template.querySelector('.places__basket');//
+    likeCardTemplate.addEventListener('click', deleteCard);//
+    delCardTemplate.addEventListener('click', putLike);//
+    imgCardTemplate.addEventListener('click', popupShowPhoto);
+    nameCardTemplate.textContent = name;
+    imgCardTemplate.src = link;
+    imgCardTemplate.alt = name;
+    document.querySelector('.profile__image').append(template);
+  }
+
+  // Функция создания карточек
+  function AddCardHandler() {
+    evt.preventDefault();
+    const item = {link: linkNewCard.value, name: nameNewCard.value};
+    createCard(item);
+    closePopup(formAddPhoto);
+    evt.target.reset();    
+  }
+
+  //formHandlerAddCard.addEventListener('submit', AddCardHandler);
   
 
 

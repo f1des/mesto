@@ -101,8 +101,8 @@
         <button type="button" title="Закрыть popupAddPhoto" class="popup__close-btn"></button> 
         <form class="popup__form" action="#">
           <h2 class="popup__title">Новое место</h2>
-          <input name="title" class="popup__text" type="text" placeholder="Название" minlength="2" maxlength="40">
-          <input name="link" class="popup__text" type="url" placeholder="Ссылка на картинку" minlength="2" maxlength="70">
+          <input name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="40">
+          <input name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" minlength="10">
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
       </div>
@@ -117,8 +117,8 @@
     </section>
 
     <template class="template__cards">
-      <li class="places__image">
-        <img src="#" class="gallery-item__photo" alt="">
+      <li class="places__item">
+        <img src="#" class="places__image" alt="">
         <button type="button" title="Удалить карточку" class="places__basket"></button>  
         <div class="places__wrapper">              
           <h2 class="places__title">Карачаево-Черкессия</h2>                
