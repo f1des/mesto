@@ -22,9 +22,10 @@ window.addEventListener('DOMContentLoaded', function init () {
   const formEditProfile = document.querySelector('.popup__form');
   const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = document.querySelector('.popup__form');
-  const { title:textTitle, link:textLink } = formAddPhoto.elements;
+  // const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
-  const like = document.querySelectorAll('.places__like-btn');
+
+  const likeCard = document.querySelectorAll('.places__like-btn');
 
   const delCard = document.querySelectorAll('.places__basket');
 
@@ -57,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   editBtn.addEventListener('click', showEditProfilePopup);
   addBtn.addEventListener('click', showAddPhotoPopup);
 
-  // Сохраняем данные профиля при закрытии попапа редактьирования профиля. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+  // Сохраняем данные профиля при закрытии попапа редактирования профиля. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
   function saveDataProfile(evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     profileName.textContent = textName.value;
@@ -85,11 +86,15 @@ window.addEventListener('DOMContentLoaded', function init () {
   });
 
   //Функция проставления лайка
-  like.forEach((likeBtn) => {
-    likeBtn.addEventListener('click', (evt) => {
-      evt.target.classList.toggle('places__like-btn_active');
+  function putLike () {
+    likeCard.forEach((likeBtn) => {
+      likeBtn.addEventListener('click', (evt) => {
+        evt.target.classList.toggle('places__like-btn_active');
+      });
     });
-  });
+  }
+
+  putLike();  
 
   //Функция открытия попапа для img
   function popupShowPhoto (evt) {
@@ -99,16 +104,50 @@ window.addEventListener('DOMContentLoaded', function init () {
     showPopup(photoPopup);
   }
   
-  //Открытие изображения
   imgItem.forEach(item => {
     item.addEventListener('click', popupShowPhoto);
   });
 
   //Удаление карточек
-  delCard.forEach (item => {
-    item.addEventListener('click', (evt) => {      
-      evt.target.closest('.places__item').remove();
+  function deleteCard () {
+    delCard.forEach (item => {
+      item.addEventListener('click', (evt) => {      
+        evt.target.closest('.places__item').remove();
+      })
     })
-  }) 
+  }  
+
+  deleteCard();
+
+  //Добавление новых карточек на страницу ERR
+  // function createCard (item) {
+  //   const name = item.name;
+  //   const link = item.link;
+  //   const templates = document.querySelector('.template').textContent.querySelector('.card').cloneNode(true);
+  //   const nameCardTemplate = templates.querySelector('.places__title');
+  //   const imgCardTemplate =  templates.querySelector('.places__image');
+  //   const likeCardTemplate = templates.querySelector('.places__like-btn');
+  //   const delCardTemplate = templates.querySelector('.places__basket');
+  //   likeCardTemplate.addEventListener('click', deleteCard);
+  //   delCardTemplate.addEventListener('click', putLike);
+  //   imgCardTemplate.addEventListener('click', popupShowPhoto);
+  //   nameCardTemplate.textContent = name;
+  //   imgCardTemplate.src = link;
+  //   imgCardTemplate.alt = name;
+  //   containerCardItems.append(templates);
+  // }
+
+  // // Функция создания карточек
+  // function AddCardHandler() {
+  //   evt.preventDefault();
+  //   //createCard({link: linkNewCard.value, name: nameNewCard.value});
+  //   closePopup(formAddPhoto);
+  //   evt.target.reset();
+
+  //   formHandlerAddCard.addEventListener('submit', AddCardHandler);
+  // }
+  
+
+
 
 })
