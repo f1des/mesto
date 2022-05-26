@@ -6,6 +6,12 @@
 
 @media screen and (max-width: 425px) {
   .popup__figure  {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__figure  {
     max-width: 240px;
   }
 }

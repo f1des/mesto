@@ -24,7 +24,9 @@ window.addEventListener('DOMContentLoaded', function init () {
   const formAddPhoto = document.querySelector('.popup__form');
   const { title:textTitle, link:textLink } = formAddPhoto.elements;
 
-  const Like = document.querySelectorAll('.places__like-btn');
+  const like = document.querySelectorAll('.places__like-btn');
+
+  const delCard = document.querySelectorAll('.places__basket');
 
   function showPopup (popups) {
     popups.classList.add('popup_opened');
@@ -83,7 +85,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   });
 
   //Функция проставления лайка
-  Like.forEach((likeBtn) => {
+  like.forEach((likeBtn) => {
     likeBtn.addEventListener('click', (evt) => {
       evt.target.classList.toggle('places__like-btn_active');
     });
@@ -97,9 +99,16 @@ window.addEventListener('DOMContentLoaded', function init () {
     showPopup(photoPopup);
   }
   
-    //Функция открытие изображения
-    imgItem.forEach(item => {
-      item.addEventListener('click', popupShowPhoto);
-    });
+  //Открытие изображения
+  imgItem.forEach(item => {
+    item.addEventListener('click', popupShowPhoto);
+  });
+
+  //Удаление карточек
+  delCard.forEach (item => {
+    item.addEventListener('click', (evt) => {      
+      evt.target.closest('.places__item').remove();
+    })
+  }) 
 
 })
