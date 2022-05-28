@@ -1,4 +1,4 @@
-//import initialCards from './initialCards.js'
+import initialCards from './initialCards.js'
 
 window.addEventListener('DOMContentLoaded', function init () {
   window.removeEventListener('DOMContentLoaded', init);  
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   const addBtn = profile.querySelector('.profile__add-btn');
 
   const editPopup = document.querySelector('#popupEditProfile');
-  const addPopup = document.querySelector('#popupAddPhoto');
+  //const addPopup = document.querySelector('#popupAddPhoto');
   const photoPopup = document.querySelector('#popupShowPhoto');
   const img =  photoPopup.querySelector('.places__image');
   const imgItem = document.querySelectorAll('.places__image')
@@ -25,10 +25,10 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   const likeCard = document.querySelectorAll('.places__like-btn');
 
-  const delCard = document.querySelectorAll('.places__basket');
-
   const nameNewCard = document.querySelector('.popup__text-title'); // edit
   const linkNewCard = document.querySelector('.popup__text-url');   // edit
+
+  const newPlaceForm = document.querySelector('#new-place-form');
  
   function showPopup (popups) {
     popups.classList.add('popup_opened');
@@ -38,7 +38,8 @@ window.addEventListener('DOMContentLoaded', function init () {
     popup.classList.remove('popup_opened');
   }
 
-  const modifyDataInProfile = () => {
+  function showEditProfilePopup () {   
+    showPopup(editPopup);
     if (textName.value !== profileName.textContent) {
       textName.value = profileName.textContent;
     }
@@ -47,16 +48,12 @@ window.addEventListener('DOMContentLoaded', function init () {
     }
   }
 
-  function showEditProfilePopup () {   
-    showPopup(editPopup);
-    modifyDataInProfile();
-  }
+  editBtn.addEventListener('click', showEditProfilePopup);
 
   function showAddPhotoPopup () {
-    showPopup(addPopup);
-  }  
+    showPopup(popupAddPhoto);
+  }    
   
-  editBtn.addEventListener('click', showEditProfilePopup);
   addBtn.addEventListener('click', showAddPhotoPopup);
 
   // Сохраняем данные профиля при закрытии попапа редактирования профиля. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
@@ -87,15 +84,16 @@ window.addEventListener('DOMContentLoaded', function init () {
   });
 
   //Функция проставления лайка
-  function putLike () {
-    likeCard.forEach((likeBtn) => {
-      likeBtn.addEventListener('click', (evt) => {
-        evt.target.classList.toggle('places__like-btn_active');
-      });
-    });
+  function putLike (evt) {
+    const card = evt.target.classList.toggle('places__like-btn_active');
+    if(card) {
+      card.remove()
+    }
   }
-
-  putLike();  
+  
+  likeCard.forEach(basket => {
+    basket.addEventListener('click', putLike)
+  })  
 
   //Функция открытия попапа для img
   function popupShowPhoto (evt) {
@@ -110,69 +108,52 @@ window.addEventListener('DOMContentLoaded', function init () {
   });
 
   //Удаление карточек
-  function deleteCard () {
-    delCard.forEach (item => {
-      item.addEventListener('click', (evt) => {      
-        evt.target.closest('.places__item').remove();
-      })
-    })
-  }  
-
-  deleteCard();
+  function deleteCard (evt) {
+    const card = evt.target.closest('.places__item')
+    if(card) {
+      card.remove()
+    }
+  }
+  
+  document.querySelectorAll('.places__basket').forEach(basket => {
+    basket.addEventListener('click', deleteCard)
+  })
 
   //Добавление новых карточек на страницу ERR
-  const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
-
+ 
   initialCards.forEach(createCard);
 
-  function createCard ({name, link}) {
-    const template = document.querySelector('.template__cards').content.querySelector('.places__item').cloneNode(true);
-    const nameCardTemplate = template.querySelector('.places__title');
-    const imgCardTemplate =  template.querySelector('.places__image');
-    const likeCardTemplate = template.querySelector('.places__like-btn');
-    const delCardTemplate = template.querySelector('.places__basket');
-    likeCardTemplate.addEventListener('click', deleteCard);
-    delCardTemplate.addEventListener('click', putLike);
-    imgCardTemplate.addEventListener('click', popupShowPhoto);
-    nameCardTemplate.textContent = name;
-    imgCardTemplate.src = link;
-    imgCardTemplate.alt = name;
-    document.querySelector('.profile__image').append(template);
+  //Вывод карточек на страницу
+  function createCard (item) { 
+    const name = item.name;
+    const link = item.link;
+    const template = document.querySelector('.template__cards').content.cloneNode(true);
+    
+    const nameCard = template.querySelector('.places__title');
+    nameCard.textContent = name;
+    
+    const likeBtn = template.querySelector('.places__like-btn');
+    likeBtn.addEventListener('click', putLike);
+    
+    const deleteBtn = template.querySelector('.places__basket');
+    deleteBtn.addEventListener('click', deleteCard);
+    
+    const img =  template.querySelector('.places__image');
+    img.addEventListener('click', popupShowPhoto);
+    img.src = link;
+    img.alt = name;
+    
+    document.querySelector('.places__cards').prepend(template);
   }
 
   // Функция создания карточек
-  function AddCardHandler() {
+  function addCardHandler(evt) {
     evt.preventDefault();
     const item = {link: linkNewCard.value, name: nameNewCard.value};
     createCard(item);
-    closePopup(formAddPhoto);
+    closePopup(popupAddPhoto);
     evt.target.reset();    
   }
 
-  formAddPhoto.addEventListener('submit', AddCardHandler);
+  newPlaceForm.addEventListener('submit', addCardHandler);
 })

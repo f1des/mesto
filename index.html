@@ -99,7 +99,7 @@
     <section id="popupAddPhoto" class="popup">   
       <div class="popup__container">
         <button type="button" title="Закрыть popupAddPhoto" class="popup__close-btn"></button> 
-        <form class="popup__form" action="#">
+        <form id="new-place-form" class="popup__form" action="#">
           <h2 class="popup__title">Новое место</h2>
           <input name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="40">
           <input name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" minlength="10">
@@ -127,6 +127,6 @@
       </li>
     </template>
 
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
