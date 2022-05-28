@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   const addBtn = profile.querySelector('.profile__add-btn');
 
   const editPopup = document.querySelector('#popupEditProfile');
-  //const addPopup = document.querySelector('#popupAddPhoto');
   const photoPopup = document.querySelector('#popupShowPhoto');
   const img =  photoPopup.querySelector('.places__image');
   const imgItem = document.querySelectorAll('.places__image')
@@ -18,15 +17,16 @@ window.addEventListener('DOMContentLoaded', function init () {
   const figcaptionImgPopup = photoPopup.querySelector('.popup__figcaption');
 
   const popups = document.querySelectorAll('.popup');
-  // Объявления для формы редактирования и добавления карточек
+  
   const formEditProfile = document.querySelector('.popup__form');
   const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = document.querySelector('.popup__form');
 
   const likeCard = document.querySelectorAll('.places__like-btn');
+  const basketCard = document.querySelectorAll('.places__basket');
 
-  const nameNewCard = document.querySelector('.popup__text-title'); // edit
-  const linkNewCard = document.querySelector('.popup__text-url');   // edit
+  const nameNewCard = document.querySelector('.popup__text-title');
+  const linkNewCard = document.querySelector('.popup__text-url');  
 
   const newPlaceForm = document.querySelector('#new-place-form');
  
@@ -56,44 +56,32 @@ window.addEventListener('DOMContentLoaded', function init () {
   
   addBtn.addEventListener('click', showAddPhotoPopup);
 
-  // Сохраняем данные профиля при закрытии попапа редактирования профиля. Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
+  // Функция сохранения данных профиля при закрытии попапа редактирования профиля
   function saveDataProfile(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы
     profileName.textContent = textName.value;
     profileJob.textContent = textJob.value;
     closePopup(document.querySelector('.popup'));
   }
 
-   // Сохраняем данные профиля при закрытии попапа добавления карточки.
+  formEditProfile.addEventListener('submit', saveDataProfile);
+
+   // Функция сохранения данных профиля при закрытии попапа добавления карточки
    function saveDataPhoto(evt) {
     evt.preventDefault();
     closePopup;
   }
-
-  // Прикрепляем обработчики к форме: он будет следить за событием “submit” - «отправка»
-  formEditProfile.addEventListener('submit', saveDataProfile);
+ 
   formAddPhoto.addEventListener('submit', saveDataPhoto);
 
-  //Функция делегирования событий для закрытий попапа
-  popups.forEach((popup) => {
+  //Делегирование событий для закрытия попапа
+  popups.forEach(popup => {
     popup.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('popup__close-btn')) {
         closePopup(popup);
       }
     });
   });
-
-  //Функция проставления лайка
-  function putLike (evt) {
-    const card = evt.target.classList.toggle('places__like-btn_active');
-    if(card) {
-      card.remove()
-    }
-  }
-  
-  likeCard.forEach(basket => {
-    basket.addEventListener('click', putLike)
-  })  
 
   //Функция открытия попапа для img
   function popupShowPhoto (evt) {
@@ -107,7 +95,16 @@ window.addEventListener('DOMContentLoaded', function init () {
     item.addEventListener('click', popupShowPhoto);
   });
 
-  //Удаление карточек
+   //Функция проставления лайка
+   function putLike (evt) {
+    evt.target.classList.toggle('places__like-btn_active');
+  }
+  
+  likeCard.forEach(basket => {
+    basket.addEventListener('click', putLike)
+  })  
+
+  //Функция удаления карточек
   function deleteCard (evt) {
     const card = evt.target.closest('.places__item')
     if(card) {
@@ -115,12 +112,11 @@ window.addEventListener('DOMContentLoaded', function init () {
     }
   }
   
-  document.querySelectorAll('.places__basket').forEach(basket => {
+  basketCard.forEach(basket => {
     basket.addEventListener('click', deleteCard)
   })
 
-  //Добавление новых карточек на страницу ERR
- 
+  //Добавление карточек из массива на страницу
   initialCards.forEach(createCard);
 
   //Вывод карточек на страницу
@@ -146,7 +142,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     document.querySelector('.places__cards').prepend(template);
   }
 
-  // Функция создания карточек
+  //Функция создания карточек
   function addCardHandler(evt) {
     evt.preventDefault();
     const item = {link: linkNewCard.value, name: nameNewCard.value};
