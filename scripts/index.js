@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   const { name:textName, job:textJob } = formEditProfile.elements;
   const formAddPhoto = document.querySelector('.popup__form');
 
-
   const likeCard = document.querySelectorAll('.places__like-btn');
 
   const delCard = document.querySelectorAll('.places__basket');
@@ -153,12 +152,12 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   function createCard ({name, link}) {
     const template = document.querySelector('.template__cards').content.querySelector('.places__item').cloneNode(true);
-    const nameCardTemplate = template.querySelector('.places__title');//
-    const imgCardTemplate =  template.querySelector('.places__image');//
-    const likeCardTemplate = template.querySelector('.places__like-btn');//
-    const delCardTemplate = template.querySelector('.places__basket');//
-    likeCardTemplate.addEventListener('click', deleteCard);//
-    delCardTemplate.addEventListener('click', putLike);//
+    const nameCardTemplate = template.querySelector('.places__title');
+    const imgCardTemplate =  template.querySelector('.places__image');
+    const likeCardTemplate = template.querySelector('.places__like-btn');
+    const delCardTemplate = template.querySelector('.places__basket');
+    likeCardTemplate.addEventListener('click', deleteCard);
+    delCardTemplate.addEventListener('click', putLike);
     imgCardTemplate.addEventListener('click', popupShowPhoto);
     nameCardTemplate.textContent = name;
     imgCardTemplate.src = link;
@@ -175,9 +174,5 @@ window.addEventListener('DOMContentLoaded', function init () {
     evt.target.reset();    
   }
 
-  //formHandlerAddCard.addEventListener('submit', AddCardHandler);
-  
-
-
-
+  formAddPhoto.addEventListener('submit', AddCardHandler);
 })
