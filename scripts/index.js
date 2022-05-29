@@ -9,9 +9,9 @@ window.addEventListener('DOMContentLoaded', function init () {
   const buttonEdit = profile.querySelector('.profile__edit-btn');
   const buttonAdd = profile.querySelector('.profile__add-btn');
 
-  const popupEditProfile = document.querySelector('.popup__edit-photo');
-  const popupOpenPhoto = document.querySelector('.popup__show-photo');
-  const popupAddPhoto = document.querySelector('.popup__add-photo');
+  const popupEditProfile = document.querySelector('.popup_edit-photo');
+  const popupOpenPhoto = document.querySelector('.popup_show-photo');
+  const popupAddPhoto = document.querySelector('.popup_add-photo');
 
   const image =  popupOpenPhoto.querySelector('.popup__image');
   const imageItem = document.querySelectorAll('.popup__image')
