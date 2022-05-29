@@ -11,8 +11,8 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   const editPopup = document.querySelector('#popupEditProfile');
   const photoPopup = document.querySelector('#popupShowPhoto');
-  const img =  photoPopup.querySelector('.places__image');
-  const imgItem = document.querySelectorAll('.places__image')
+  const img =  photoPopup.querySelector('.popup__image');
+  const imgItem = document.querySelectorAll('.popup__image')
 
   const figcaptionImgPopup = photoPopup.querySelector('.popup__figcaption');
 
