@@ -27,54 +27,6 @@
   
         <section class="places">
           <ul class="places__cards">
-            <li class="places__item">              
-              <button type="button" title="Удалить карточку" class="places__basket"></button>         
-              <img src="./images/photo-karachayevsk.jpg" alt="Карачаевск" class="places__image">   
-              <div class="places__wrapper">
-                <h2 class="places__title">Карачаевск</h2>                       
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-              </div>              
-            </li>   
-            <li class="places__item">
-              <button type="button" title="Удалить карточку" class="places__basket"></button>           
-              <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
-              <div class="places__wrapper">
-                <h2 class="places__title">Гора Эльбрус</h2>                
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-              </div>                      
-            </li>  
-            <li class="places__item">
-              <button type="button" title="Удалить карточку" class="places__basket"></button>              
-              <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
-              <div class="places__wrapper">
-                <h2 class="places__title">Домбай</h2>                
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button>
-              </div>                        
-            </li>  
-            <li class="places__item">
-              <button type="button" title="Удалить карточку" class="places__basket"></button>              
-              <img src="./images/photo-elbrus.jpg" alt="Гора Эльбрус" class="places__image">
-              <div class="places__wrapper">
-                <h2 class="places__title">Гора Эльбрус</h2>                
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
-              </div>                       
-            </li> 
-            <li class="places__item">
-              <button type="button" title="Удалить карточку" class="places__basket"></button>              
-              <img src="./images/photo-dombay.jpg" alt="Домбай" class="places__image">
-              <div class="places__wrapper">
-                <h2 class="places__title">Домбай</h2>                
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button>  
-              </div>                      
-            </li> 
-            <li class="places__item">
-              <button type="button" title="Удалить карточку" class="places__basket"></button>              
-              <img src="./images/photo-karachayevsk.jpg" alt="Карачаево-Черкессия" class="places__image">
-              <div class="places__wrapper">              
-                <h2 class="places__title">Карачаево-Черкессия</h2>                
-                <button type="button" title="Поставить лайк" class="places__like-btn"></button> 
-              </div>      
-            </li>                      
           </ul>
         </section>
       </main>
@@ -84,10 +36,10 @@
       </footer>
     </div>   
 
-    <section id="popupEditProfile" class="popup">   
+    <section class="popup popup__edit-photo">   
       <div class="popup__container">
         <button type="button" title="Закрыть popupEditProfile" class="popup__close-btn"></button> 
-        <form class="popup__form" action="#">
+        <form id="form-profile-new" class="popup__form" action="#">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40">
           <input name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="70">
@@ -96,10 +48,10 @@
       </div>
     </section>
 
-    <section id="popupAddPhoto" class="popup">   
+    <section class="popup popup__add-photo">
       <div class="popup__container">
         <button type="button" title="Закрыть popupAddPhoto" class="popup__close-btn"></button> 
-        <form id="new-place-form" class="popup__form" action="#">
+        <form id="form-place-new" class="popup__form" action="#">
           <h2 class="popup__title">Новое место</h2>
           <input name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="40">
           <input name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" minlength="10">
@@ -108,7 +60,7 @@
       </div>
     </section>
 
-    <section id="popupShowPhoto" class="popup">   
+    <section class="popup popup__show-photo">   
       <figure class="popup__figure">
         <button type="button" title="Закрыть popupShowPhoto" class="popup__close-btn"></button>
         <img src="./images/photo-karachayevsk.jpg" alt="" class="popup__image popup__open-popup">  
