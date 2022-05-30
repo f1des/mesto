@@ -14,17 +14,13 @@ window.addEventListener('DOMContentLoaded', function init () {
   const popupAddPhoto = document.querySelector('.popup_add-photo');
 
   const image =  popupOpenPhoto.querySelector('.popup__image');
-  const imageItem = document.querySelectorAll('.popup__image')
 
   const figCaptionImagePopup = popupOpenPhoto.querySelector('.popup__figcaption');
   
   const popups = document.querySelectorAll('.popup');
   
   const formEditProfile = document.querySelector('#form-profile-new');
-  const { name:textName, job:textJob } = formEditProfile.elements;  
-
-  const buttonLikeCards = document.querySelectorAll('.places__like-btn');
-  const buttonBasketCards = document.querySelectorAll('.places__basket');
+  const { name:textName, job:textJob } = formEditProfile.elements;
 
   const nameNewCard = document.querySelector('.popup__text-title');
   const linkNewCard = document.querySelector('.popup__text-url');  
@@ -86,19 +82,11 @@ window.addEventListener('DOMContentLoaded', function init () {
     image.alt = evt.target.alt;
     showPopup(popupOpenPhoto);
   }
-  
-  imageItem.forEach(item => {
-    item.addEventListener('click', popupShowPhoto);
-  });
 
    //Функция проставления лайка
    function putLike (evt) {
     evt.target.classList.toggle('places__like-btn_active');
   }
-  
-  buttonLikeCards.forEach(basket => {
-    basket.addEventListener('click', putLike)
-  })  
 
   //Функция удаления карточек
   function deleteCard (evt) {
@@ -107,18 +95,9 @@ window.addEventListener('DOMContentLoaded', function init () {
       card.remove()
     }
   }
-  
-  buttonBasketCards.forEach(basket => {
-    basket.addEventListener('click', deleteCard)
-  })
 
   //Добавление карточек из массива на страницу
   initialCards.forEach(createCard);
-
-  //
-  function renderCard () {
-    const result = createCard(item);
-  }
 
   //Вывод карточек на страницу
   function createCard (item) { 
@@ -139,17 +118,18 @@ window.addEventListener('DOMContentLoaded', function init () {
     imagePlaces.addEventListener('click', popupShowPhoto);
     imagePlaces.src = link;
     imagePlaces.alt = name;
-    
-    cardsPlaces.prepend(template);
-  }
+    renderCard;
+    //cardsPlaces.prepend(template)
+    beze;
+  } 
 
   //Функция создания карточек
   function renderCard(evt) {
     evt.preventDefault();
     const item = {link: linkNewCard.value, name: nameNewCard.value};
-    createCard(item);
+    createCard(item);    
     closePopup(popupAddPhoto);
-    evt.target.reset();    
+    evt.target.reset();
   }
 
   formPlaceNew.addEventListener('submit', renderCard);
