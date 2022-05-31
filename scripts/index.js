@@ -30,15 +30,15 @@ window.addEventListener('DOMContentLoaded', function init () {
   const cardsPlaces = document.querySelector('.places__cards');
   const cardsTemplate = document.querySelector('.template__cards');
  
-  function showPopup (popup) {
+  function showPopup(popup) {
     popup.classList.add('popup_opened');
   }
 
-  function closePopup (popup) {
+  function closePopup(popup) {
     popup.classList.remove('popup_opened');
   }
 
-  function showEditProfilePopup () {   
+  function showEditProfilePopup() {   
     showPopup(popupEditProfile);
     if (textName.value !== profileName.textContent) {
       textName.value = profileName.textContent;
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   buttonEdit.addEventListener('click', showEditProfilePopup);
 
-  function showAddpopupOpenPhoto () {
+  function showAddpopupOpenPhoto() {
     showPopup(popupAddPhoto);
   }    
   
@@ -73,10 +73,10 @@ window.addEventListener('DOMContentLoaded', function init () {
         closePopup(popup);
       }
     });
-  });
+  })
 
   //Функция открытия попапа для image
-  function popupShowPhoto (evt) {
+  function popupShowPhoto(evt) {
     image.src = evt.target.src;
     figCaptionImagePopup.textContent = evt.target.alt;
     image.alt = evt.target.alt;
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
    //Функция проставления лайка
-   function putLike (evt) {
+   function putLike(evt) {
     evt.target.classList.toggle('places__like-btn_active');
   }
 
@@ -95,9 +95,6 @@ window.addEventListener('DOMContentLoaded', function init () {
       card.remove()
     }
   }
-
-  //Добавление карточек из массива на страницу
-  initialCards.forEach(createCard);
 
   //Вывод карточек на страницу
   function createCard (item) { 
@@ -118,16 +115,24 @@ window.addEventListener('DOMContentLoaded', function init () {
     imagePlaces.addEventListener('click', popupShowPhoto);
     imagePlaces.src = link;
     imagePlaces.alt = name;
-    renderCard;
-    //cardsPlaces.prepend(template)
-    beze;
+    
+    return template;
   } 
 
-  //Функция создания карточек
+  //Функция добавления карточек в разметку
+  function addCard(wrap, item) {
+    wrap.prepend(createCard(item));
+  }
+
+  //Добавление карточек из массива на страницу
+  initialCards.forEach(item => {
+    addCard(cardsPlaces, item);
+  })
+
   function renderCard(evt) {
     evt.preventDefault();
-    const item = {link: linkNewCard.value, name: nameNewCard.value};
-    createCard(item);    
+    const item = {link: linkNewCard.value, name: nameNewCard.value}; 
+    addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
   }
