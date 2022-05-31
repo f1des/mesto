@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
   //Функция удаления карточек
-  function deleteCard (evt) {
+  function deleteCard(evt) {
     const card = evt.target.closest('.places__item')
     if(card) {
       card.remove()
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
   //Вывод карточек на страницу
-  function createCard (item) { 
+  function createCard(item) { 
     const name = item.name;
     const link = item.link;    
     const template = cardsTemplate.content.cloneNode(true);
