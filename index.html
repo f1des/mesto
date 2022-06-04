@@ -42,9 +42,9 @@
         <form id="form-profile-new" class="popup__form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <input id="name-input" name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
-          <span class="popup__form_input-error name-input-error">Поле заполнено некорректно</span>
+          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
           <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
-          <span class="popup__form_input-error job-input-error">Поле заполнено некорректно</span>
+          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
       </div>
@@ -56,10 +56,10 @@
         <form id="form-place-new" class="popup__form" novalidate>
           <h2 class="popup__title">Новое место</h2>
           <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="30" required>
-          <span class="popup__form_input-error name-input-error">Поле заполнено некорректно</span>
+          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
           <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" required>
-          <span class="popup__form_input-error link-input-error">Поле заполнено некорректно</span>
-          <button type="submit" class="popup__submit-btn">Сохранить</button>     
+          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
+          <button type="submit" class="popup__submit-btn" disabled>Создать</button>     
         </form>
       </div>
     </section>
@@ -83,6 +83,8 @@
       </li>
     </template>
 
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>    
+    <script type="module" src="./scripts/validate.js"></script>
+
   </body>
 </html>

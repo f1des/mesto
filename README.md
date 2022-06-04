@@ -1,7 +1,7 @@
 # Проектная работа по Яндекс Практикуму № (4,5)6 - Место
 
 ## Функциональность проекта:
-* Адаптивный одностраничный сайт, созданный по [макету 1 Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1) и [макету 2 Figma](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1). Сайт оптимизирован для просмотра на экранах популярных размеров. При вёрстке использован подход Desktop First.
+* Адаптивный одностраничный сайт, созданный по [первому](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1) и [второму](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1) макетам Figma. Сайт оптимизирован для просмотра на экранах популярных размеров. При вёрстке использован подход Desktop First.
 
 ## Используемые технологии
 
