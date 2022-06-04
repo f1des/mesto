@@ -43,7 +43,7 @@
           <h2 class="popup__title">Редактировать профиль</h2>
           <input id="name-input" name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
           <span class="popup__form_input-error name-input-error">Поле заполнено некорректно</span>
-          <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="70" required>
+          <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
           <span class="popup__form_input-error job-input-error">Поле заполнено некорректно</span>
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
@@ -55,9 +55,9 @@
         <button type="button" title="Закрыть popupAddPhoto" class="popup__close-btn"></button> 
         <form id="form-place-new" class="popup__form" novalidate>
           <h2 class="popup__title">Новое место</h2>
-          <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="40" required>
+          <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="30" required>
           <span class="popup__form_input-error name-input-error">Поле заполнено некорректно</span>
-          <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" minlength="10" required>
+          <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" required>
           <span class="popup__form_input-error link-input-error">Поле заполнено некорректно</span>
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
