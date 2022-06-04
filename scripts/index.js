@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   formEditProfile.addEventListener('submit', saveDataProfile);
 
-  //Делегирование событий для закрытия попапа
+  //Закрытие попапа
   popups.forEach(popup => {
     popup.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('popup__close-btn')) {
@@ -139,3 +139,7 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   formPlaceNew.addEventListener('submit', renderCard);
 })
+
+// Валидация форм -> Работа с формами -> п.6 События change и input -> Тренажер зад.5-6-7
+// HTML              Валидация форм -> 2. Встроенная браузерная валидация форм -> Тренажер зад.1-2-3
+// JS                                  4.
