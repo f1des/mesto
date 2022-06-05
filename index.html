@@ -42,11 +42,15 @@
         <form id="form-profile-new" class="popup__form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
 
-          <input id="name-input" name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+          <fieldset class="popup__form_fieldset">
+            <input id="name-input" name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
           <span id="name-input-error" class="popup__error">Вы пропустили это поле.</span>
+          </fieldset>
 
-          <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
-          <span id="job-input-error" class="popup__error">Вы пропустили это поле.</span>
+          <fieldset class="popup__form_fieldset">
+            <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
+            <span id="job-input-error" class="popup__error">Вы пропустили это поле.</span>
+          </fieldset>
 
           <button type="submit" class="popup__submit-btn popup__submit-btn-edit">Сохранить</button>     
         </form>
@@ -59,11 +63,15 @@
         <form id="form-place-new" class="popup__form" novalidate>
           <h2 class="popup__title">Новое место</h2>
 
-          <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="30" required>
-          <span id="name-input-error" class="popup__error">Вы пропустили это поле.</span>
+          <fieldset class="popup__form_fieldset">
+            <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+            <span id="name-input-error" class="popup__error">Вы пропустили это поле.</span>
+          </fieldset>
           
-          <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" required>
-          <span id="link-input-error" class="popup__error">Вы пропустили это поле.</span>
+          <fieldset class="popup__form_fieldset">
+            <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" required>
+            <span id="link-input-error" class="popup__error">Вы пропустили это поле.</span>
+          </fieldset>
 
           <button type="submit" class="popup__submit-btn popup__submit-btn-add">Сохранить</button>     
         </form>

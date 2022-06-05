@@ -1,12 +1,10 @@
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
 const objValidation = {
-  formSelector: 'popup__form',                  //+ all form
-  inputSelector: 'popup__text',                 //+ all input
-  submitButtonSelector: 'popup__submit-btn',    //+ button
-  inactiveButtonClass: 'popup__button_disabled', //+
-  inputErrorClass: 'popup__text_type_error',     //+ изменили на свой с input
-  errorClass: 'popup__error_visible'             //+ text error
+  formSelector: 'popup__form',                  
+  inputSelector: 'popup__text',                 
+  submitButtonSelector: 'popup__submit-btn',    
+  inactiveButtonClass: 'popup__button_disabled', 
+  inputErrorClass: 'popup__text_type_error',     
+  errorClass: 'popup__error_visible'             
 }
 
 //Функция отображения ошибки

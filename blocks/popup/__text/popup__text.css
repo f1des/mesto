@@ -7,9 +7,5 @@
   font-size: 14px;
   line-height: 17px;
   outline: none;
-  padding: 0 0 7px;
-}
-
-.popup__text:last-of-type {
-  padding-top: 31px;
+  padding: 25px 0 7px;
 }
