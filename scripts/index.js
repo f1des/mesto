@@ -30,6 +30,8 @@ window.addEventListener('DOMContentLoaded', function init () {
   const cardsPlaces = document.querySelector('.places__cards');
   const cardsTemplate = document.querySelector('.template__cards');
 
+  const buttonSubmit = document.querySelector('.popup__submit-btn');
+
   function keyHandler(evt) {
     const popupOpened = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
@@ -144,7 +146,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
-    toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+    disableSubmitButton(buttonSubmit, objValidation.inactiveButtonClass);
   }
 
   formPlaceNew.addEventListener('submit', renderCard);

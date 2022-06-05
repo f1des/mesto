@@ -43,16 +43,10 @@ function hasInvalidInput(inputList) {
   });
 }
 
-//Функция выключения кнопки 
-function disableSubmitButton (buttonElement) {
+//Функция деактивации кнопки при повторном откртии попапа 
+function disableSubmitButton(buttonElement, inactiveButtonClass) {
   buttonElement.disabled = true;
-  buttonElement.classList.add('popup__button_disabled');
-}
-
-//Функция включения кнопки 
-function enableSubmitButton (buttonElement) {
-  buttonElement.disabled = false;
-  buttonElement.classList.remove('popup__button_disabled');
+  buttonElement.classList.add(inactiveButtonClass);
 }
 
 //Функция настройки состояния кнопки
