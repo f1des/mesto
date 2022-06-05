@@ -49,18 +49,16 @@ function disableSubmitButton(buttonElement, inactiveButtonClass) {
 
 //Функция активации кнопки для editForm
 function enableSubmitButton(buttonElement, inactiveButtonClass) {
-  buttonElement.disabled = true;
+  buttonElement.disabled = false;
   buttonElement.classList.remove(inactiveButtonClass);
 }
 
 //Функция настройки состояния кнопки
 function toggleButtonState(inputList, buttonElement, inactiveButtonClass) {
   if (hasInvalidInput(inputList)) {
-      buttonElement.classList.add(inactiveButtonClass);
-      buttonElement.disabled = true;
+    disableSubmitButton(buttonElement, inactiveButtonClass);
   } else {
-      buttonElement.classList.remove(inactiveButtonClass);
-      buttonElement.disabled = false;
+    enableSubmitButton(buttonElement, inactiveButtonClass)
   }
 }
 
@@ -85,9 +83,6 @@ function enableValidation(objValidation) {
   const { formSelector } = objValidation;
   const formList = Array.from(document.querySelectorAll(`.${formSelector}`));
   formList.forEach((formElement) => {
-      formElement.addEventListener('submit', evt => {
-          evt.preventDefault();
-      });
       setEventListener(formElement, objValidation);
   })
 };

@@ -33,21 +33,21 @@ window.addEventListener('DOMContentLoaded', function init () {
   const buttonSubmitEdit = document.querySelector('.popup__submit-btn-edit');
   const buttonSubmitAdd = document.querySelector('.popup__submit-btn-add');
 
-  function keyHandler(evt) {
-    const popupOpened = document.querySelector('.popup_opened');
+  function closeByEscape(evt) {    
     if (evt.key === 'Escape') {
+      const popupOpened = document.querySelector('.popup_opened');
       closePopup(popupOpened);
     }
   }
  
   function showPopup(popup) {
     popup.classList.add('popup_opened');
-    document.addEventListener('keydown', keyHandler);
+    document.addEventListener('keydown', closeByEscape);
   }
 
   function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', keyHandler);
+    document.removeEventListener('keydown', closeByEscape);
   }
 
   function showEditProfilePopup() {   
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   })
 
   //Функция открытия попапа для image
-  function popupShowPhoto(evt) {
+  function showPopupPhoto(evt) {
     image.src = evt.target.src;
     figCaptionImagePopup.textContent = evt.target.alt;
     image.alt = evt.target.alt;
@@ -104,9 +104,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   //Функция удаления карточек
   function deleteCard(evt) {
     const card = evt.target.closest('.places__item')
-    if(card) {
-      card.remove()
-    }
+    card.remove()
   }
 
   //Вывод карточек на страницу
@@ -125,7 +123,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     buttonDeletePlaces.addEventListener('click', deleteCard);
     
     const imagePlaces =  template.querySelector('.places__image');
-    imagePlaces.addEventListener('click', popupShowPhoto);
+    imagePlaces.addEventListener('click', showPopupPhoto);
     imagePlaces.src = link;
     imagePlaces.alt = name;
     
