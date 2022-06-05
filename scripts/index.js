@@ -18,7 +18,6 @@ window.addEventListener('DOMContentLoaded', function init () {
   const figCaptionImagePopup = popupOpenPhoto.querySelector('.popup__figcaption');
   
   const popups = document.querySelectorAll('.popup');
-  const popupOpen = document.querySelector('.popup');
   
   const formEditProfile = document.querySelector('#form-profile-new');
   const { name:textName, job:textJob } = formEditProfile.elements;
@@ -33,10 +32,12 @@ window.addEventListener('DOMContentLoaded', function init () {
  
   function showPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', keyHandler);
   }
 
   function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', keyHandler);
   }
 
   function showEditProfilePopup() {   
@@ -76,14 +77,12 @@ window.addEventListener('DOMContentLoaded', function init () {
     });
   })
 
-  //
   function keyHandler(evt) {
+    const popupOpened = document.querySelector('.popup_opened');
     if (evt.key === 'Escape') {
-      console.log('Закрыть окно')
+      closePopup(popupOpened);
     }
   }
-
-  document.addEventListener("keydown", keyHandler);
 
   //Функция открытия попапа для image
   function popupShowPhoto(evt) {
