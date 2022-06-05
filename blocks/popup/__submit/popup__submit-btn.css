@@ -14,17 +14,8 @@
   border: 0;
 }
 
-.popup__submit-btn:hover {
-  
+.popup__submit-btn:hover {  
   opacity: .8;
-}
-
-.popup__submit-btn:disabled { 
-  background-color: #fff;
-  color: #000;
-  opacity: .2;
-  border: 1px solid #000;
-  border-radius: 2px;
 }
 
 @media screen and (max-width: 425px) {

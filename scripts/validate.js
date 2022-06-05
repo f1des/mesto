@@ -43,10 +43,16 @@ function hasInvalidInput(inputList) {
   });
 }
 
-//Функция деактивации кнопки при повторном откртии попапа 
+//Функция деактивации кнопки при повторном открытии попапа для addForm
 function disableSubmitButton(buttonElement, inactiveButtonClass) {
   buttonElement.disabled = true;
   buttonElement.classList.add(inactiveButtonClass);
+}
+
+//Функция активации кнопки для editForm
+function enableSubmitButton(buttonElement, inactiveButtonClass) {
+  buttonElement.disabled = true;
+  buttonElement.classList.remove(inactiveButtonClass);
 }
 
 //Функция настройки состояния кнопки

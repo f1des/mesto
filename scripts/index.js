@@ -30,7 +30,8 @@ window.addEventListener('DOMContentLoaded', function init () {
   const cardsPlaces = document.querySelector('.places__cards');
   const cardsTemplate = document.querySelector('.template__cards');
 
-  const buttonSubmit = document.querySelector('.popup__submit-btn');
+  const buttonSubmitEdit = document.querySelector('.popup__submit-btn-edit');
+  const buttonSubmitAdd = document.querySelector('.popup__submit-btn-add');
 
   function keyHandler(evt) {
     const popupOpened = document.querySelector('.popup_opened');
@@ -57,6 +58,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     if (textJob.value !== profileJob.textContent) {
       textJob.value = profileJob.textContent;
     }
+    enableSubmitButton(buttonSubmitEdit, objValidation.inactiveButtonClass);
   }
 
   buttonEdit.addEventListener('click', showEditProfilePopup);
@@ -146,7 +148,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
-    disableSubmitButton(buttonSubmit, objValidation.inactiveButtonClass);
+    disableSubmitButton(buttonSubmitAdd, objValidation.inactiveButtonClass);
   }
 
   formPlaceNew.addEventListener('submit', renderCard);
