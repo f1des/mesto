@@ -41,10 +41,13 @@
         <button type="button" title="Закрыть popupEditProfile" class="popup__close-btn"></button> 
         <form id="form-profile-new" class="popup__form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
+
           <input id="name-input" name="name" class="popup__text" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
-          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
+          <span id="name-input-error" class="popup__error">Вы пропустили это поле.</span>
+
           <input id="job-input" name="job" class="popup__text" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
-          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
+          <span id="job-input-error" class="popup__error">Вы пропустили это поле.</span>
+
           <button type="submit" class="popup__submit-btn">Сохранить</button>     
         </form>
       </div>
@@ -55,11 +58,14 @@
         <button type="button" title="Закрыть popupAddPhoto" class="popup__close-btn"></button> 
         <form id="form-place-new" class="popup__form" novalidate>
           <h2 class="popup__title">Новое место</h2>
+
           <input id="name-input" name="title" class="popup__text popup__text-title" type="text" placeholder="Название" minlength="2" maxlength="30" required>
-          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
+          <span id="name-input-error" class="popup__error">Вы пропустили это поле.</span>
+          
           <input id="link-input" name="link" class="popup__text popup__text-url" type="url" placeholder="Ссылка на картинку" required>
-          <span class="popup__error popup__error_show">Вы пропустили это поле.</span>
-          <button type="submit" class="popup__submit-btn" disabled>Создать</button>     
+          <span id="link-input-error" class="popup__error">Вы пропустили это поле.</span>
+
+          <button type="submit" class="popup__submit-btn" disabled>Сохранить</button>     
         </form>
       </div>
     </section>
@@ -83,8 +89,8 @@
       </li>
     </template>
 
-    <script type="module" src="./scripts/index.js"></script>    
-    <script type="module" src="./scripts/validate.js"></script>
+    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 
   </body>
 </html>

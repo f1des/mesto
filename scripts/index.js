@@ -29,6 +29,13 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   const cardsPlaces = document.querySelector('.places__cards');
   const cardsTemplate = document.querySelector('.template__cards');
+
+  function keyHandler(evt) {
+    const popupOpened = document.querySelector('.popup_opened');
+    if (evt.key === 'Escape') {
+      closePopup(popupOpened);
+    }
+  }
  
   function showPopup(popup) {
     popup.classList.add('popup_opened');
@@ -60,7 +67,7 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   // Функция сохранения данных профиля при закрытии попапа редактирования профиля
   function saveDataProfile(evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы
+    evt.preventDefault();
     profileName.textContent = textName.value;
     profileJob.textContent = textJob.value;
     closePopup(popupEditProfile);
@@ -76,13 +83,6 @@ window.addEventListener('DOMContentLoaded', function init () {
       }
     });
   })
-
-  function keyHandler(evt) {
-    const popupOpened = document.querySelector('.popup_opened');
-    if (evt.key === 'Escape') {
-      closePopup(popupOpened);
-    }
-  }
 
   //Функция открытия попапа для image
   function popupShowPhoto(evt) {
@@ -144,11 +144,8 @@ window.addEventListener('DOMContentLoaded', function init () {
     addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
+    toggleButtonState(inputList, buttonElement, inactiveButtonClass);
   }
 
   formPlaceNew.addEventListener('submit', renderCard);
-})
-
-// Валидация форм -> Работа с формами -> п.6 События change и input -> Тренажер зад.5-6-7
-// HTML              Валидация форм -> 2. Встроенная браузерная валидация форм -> Тренажер зад.1-2-3
-// JS                                  4.
+})            
