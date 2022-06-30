@@ -39,8 +39,8 @@ window.addEventListener('DOMContentLoaded', function init () {
 
   // Преробразовываем в массив из коллекций
   Array.from(document.forms).forEach(formElement => {
-    formValidators[formElement.name] = new FormValidator(objValidation, formElement); // Помещаем экземпляр класса в новый объект
-    formValidators[formElement.name].enableValidation(); //Включаем валидацию для всех форм
+    formValidators[formElement.id] = new FormValidator(objValidation, formElement); // Помещаем экземпляр класса в новый объект
+    formValidators[formElement.id].enableValidation(); //Включаем валидацию для всех форм
   })
 
   function closeByEscape(evt) {    
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   }
 
   buttonEdit.addEventListener('click', () => {
-    formValidators[buttonEdit.name].resetForm(); 
+    formValidators[buttonEdit.id].resetForm(); 
     showEditProfilePopup;
   });
 
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function init () {
   }    
   
   buttonAdd.addEventListener('click', () => {
-    formValidators[buttonAdd.name].resetForm(); 
+    formValidators[buttonAdd.id].resetForm(); 
     showAddpopupOpenPhoto
   });
 
