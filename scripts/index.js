@@ -1,4 +1,6 @@
-import initialCards from './initialCards.js'
+import initialCards from './initialCards.js';
+import FormValidator from './FormValidator.js';
+import templateSelector from './constans.js'
 
 window.addEventListener('DOMContentLoaded', function init () {
   window.removeEventListener('DOMContentLoaded', init);  
@@ -146,7 +148,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
-    disableSubmitButton(buttonSubmitAdd, objValidation.inactiveButtonClass);
+    disableSubmitButton(buttonSubmitAdd, data.inactiveButtonClass);
   }
 
   formPlaceNew.addEventListener('submit', renderCard);

@@ -1,4 +1,4 @@
-class FormValidator {
+export default class FormValidator {
   constructor(data, formSelector) {
     this._inputSelector = data.inputSelector;
     this._submitButtonSelector = data.submitButtonSelector;
@@ -85,9 +85,23 @@ class FormValidator {
     })
   };
 
-  enableValidation();
-
+  _enableValidation()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 const objValidation = {
