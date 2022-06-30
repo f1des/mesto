@@ -1,4 +1,4 @@
-import initialCards from './initialCards.js';
+import initialCards from './constants.js';
 
 class Card {
   constructor(data, cardSelector) {

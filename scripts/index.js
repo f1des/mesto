@@ -1,6 +1,6 @@
-import initialCards from './initialCards.js';
+import { initialCards, objValidation, templateSelector } from './constants.js'
 import FormValidator from './FormValidator.js';
-import templateSelector from './constans.js'
+
 
 window.addEventListener('DOMContentLoaded', function init () {
   window.removeEventListener('DOMContentLoaded', init);  
@@ -35,6 +35,14 @@ window.addEventListener('DOMContentLoaded', function init () {
   const buttonSubmitEdit = document.querySelector('.popup__submit-btn-edit');
   const buttonSubmitAdd = document.querySelector('.popup__submit-btn-add');
 
+  const formValidators = {}; // пустой объект
+
+  // Преробразовываем в массив из коллекций
+  Array.from(document.forms).forEach(formElement => {
+    formValidators[formElement.name] = new FormValidator(objValidation, formElement); // Помещаем экземпляр класса в новый объект
+    formValidators[formElement.name].enableValidation(); //Включаем валидацию для всех форм
+  })
+
   function closeByEscape(evt) {    
     if (evt.key === 'Escape') {
       const popupOpened = document.querySelector('.popup_opened');
@@ -52,7 +60,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     document.removeEventListener('keydown', closeByEscape);
   }
 
-  function showEditProfilePopup() {   
+  function showEditProfilePopup() { 
     showPopup(popupEditProfile);
     if (textName.value !== profileName.textContent) {
       textName.value = profileName.textContent;
@@ -63,13 +71,19 @@ window.addEventListener('DOMContentLoaded', function init () {
     enableSubmitButton(buttonSubmitEdit, objValidation.inactiveButtonClass);
   }
 
-  buttonEdit.addEventListener('click', showEditProfilePopup);
+  buttonEdit.addEventListener('click', () => {
+    formValidators[buttonEdit.name].resetForm(); 
+    showEditProfilePopup;
+  });
 
   function showAddpopupOpenPhoto() {
     showPopup(popupAddPhoto);
   }    
   
-  buttonAdd.addEventListener('click', showAddpopupOpenPhoto);
+  buttonAdd.addEventListener('click', () => {
+    formValidators[buttonAdd.name].resetForm(); 
+    showAddpopupOpenPhoto
+  });
 
   // Функция сохранения данных профиля при закрытии попапа редактирования профиля
   function saveDataProfile(evt) {
@@ -148,7 +162,7 @@ window.addEventListener('DOMContentLoaded', function init () {
     addCard(cardsPlaces, item); 
     closePopup(popupAddPhoto);
     evt.target.reset();
-    disableSubmitButton(buttonSubmitAdd, data.inactiveButtonClass);
+    this._disableSubmitButton(buttonSubmitAdd, this._inactiveButtonClass);
   }
 
   formPlaceNew.addEventListener('submit', renderCard);
