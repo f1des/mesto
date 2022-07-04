@@ -1,4 +1,4 @@
-import { initialCards, objValidation, templateSelector } from './constants.js'
+import { initialCards, objValidation } from './constants.js'
 import FormValidator from './FormValidator.js';
 
 
@@ -38,10 +38,10 @@ window.addEventListener('DOMContentLoaded', function init () {
   const formValidators = {}; // пустой объект
 
   // Преробразовываем в массив из коллекций
-  Array.from(document.forms).forEach(formElement => {
-    formValidators[formElement.id] = new FormValidator(objValidation, formElement); // Помещаем экземпляр класса в новый объект
-    formValidators[formElement.id].enableValidation(); //Включаем валидацию для всех форм
-  })
+  Array.from(document.forms).forEach((formElement) => {
+    formValidators[formElement.name] = new FormValidator(objValidation, formElement); // Помещаем экземпляр класса в новый объект
+    formValidators[formElement.name].enableValidation(); //Включаем валидацию для всех форм
+  });
 
   function closeByEscape(evt) {    
     if (evt.key === 'Escape') {
@@ -68,21 +68,21 @@ window.addEventListener('DOMContentLoaded', function init () {
     if (textJob.value !== profileJob.textContent) {
       textJob.value = profileJob.textContent;
     }
-    enableSubmitButton(buttonSubmitEdit, objValidation.inactiveButtonClass);
+    this._enableSubmitButton(buttonSubmitEdit, this._inactiveButtonClass);
   }
 
   buttonEdit.addEventListener('click', () => {
-    formValidators[buttonEdit.id].resetForm(); 
-    showEditProfilePopup;
+    formValidators[formProfileNew.name].resetForm(); 
+    showEditProfilePopup();
   });
 
-  function showAddpopupOpenPhoto() {
+  function showAddPopupOpenPhoto() {
     showPopup(popupAddPhoto);
   }    
   
   buttonAdd.addEventListener('click', () => {
-    formValidators[buttonAdd.id].resetForm(); 
-    showAddpopupOpenPhoto
+    formValidators[formPlaceNew.name].resetForm(); 
+    showAddPopupOpenPhoto();
   });
 
   // Функция сохранения данных профиля при закрытии попапа редактирования профиля
