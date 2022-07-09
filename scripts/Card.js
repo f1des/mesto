@@ -21,9 +21,9 @@ class Card {
 
   // Установка данных полей
   _findData() {
-    this._element.querySelector('.places__title').alt = this._name;
-    this._element.querySelector('.places__title').textContent = this._name;
-    this._element.querySelector('.places__image').src = this._link;    
+    this._nameCard.alt = this._name;
+    this._nameCard.textContent = this._name;
+    this._imagePlaces.src = this._link;    
   }
 
   //Функция проставления лайка
@@ -33,7 +33,8 @@ class Card {
 
   //Функция удаления карточек
   _deleteCard = () => {
-    this._buttonDeletePlaces.closest('.places__item').remove();
+    this._element.remove();
+    this._element = null;
    };
 
   // Обработчик открытия изображения

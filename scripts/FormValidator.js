@@ -4,8 +4,12 @@ class FormValidator {
     this._submitButtonSelector = data.submitButtonSelector;
     this._inactiveButtonClass = data.inactiveButtonClass;
     this._inputErrorClass = data.inputErrorClass;
-    this._errorClass = data.errorClass;
+    this._errorClass = data.errorClass;   
+
     this._form = form;
+    
+    this._inputList = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
+    this._buttonElement = this._form.querySelector(`.${this._submitButtonSelector}`);
   }
 
   //Метод отображения ошибки
@@ -35,57 +39,51 @@ class FormValidator {
   }
 
   // Функция проверки на корректность данных
-  _hasInvalidInput(inputList) {
+  _hasInvalidInput() {
     // Проходим по массиву методом some
-    return inputList.some(inputElement => {
+    return this._inputList.some(inputElement => {
         return !inputElement.validity.valid;
     });
   }
 
   //Метод деактивации кнопки при повторном открытии попапа для addForm
-  _disableSubmitButton(buttonElement) {
-    buttonElement.disabled = true;
-    buttonElement.classList.add(this._inactiveButtonClass);
+  _disableSubmitButton() {
+    this._buttonElement.disabled = true;
+    this._buttonElement.classList.add(this._inactiveButtonClass);
   }
 
   //Метод активации кнопки для editForm
-  _enableSubmitButton(buttonElement) {
-    buttonElement.disabled = false;
-    buttonElement.classList.remove(this._inactiveButtonClass);
+  _enableSubmitButton() {
+    this._buttonElement.disabled = false;
+    this._buttonElement.classList.remove(this._inactiveButtonClass);
   }
 
   //Метод настройки состояния кнопки
-  _toggleButtonState(inputList, buttonElement) {
-    if (this._hasInvalidInput(inputList)) {
-      this._disableSubmitButton(buttonElement, this._inactiveButtonClass);
+  _toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._disableSubmitButton();
     } else {
-      this._enableSubmitButton(buttonElement, this._inactiveButtonClass);
+      this._enableSubmitButton();
     }
   }
 
   //Публичный метод добавления событий для всех форм 
   enableValidation() {
-    const inputList = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
-    const buttonElement = this._form.querySelector(`.${this._submitButtonSelector}`);
+    this._toggleButtonState();
 
-    this._toggleButtonState(inputList, buttonElement);
-
-    inputList.forEach(inputElement => {
+    this._inputList.forEach(inputElement => {
         inputElement.addEventListener('input', () => {
             this._checkInputValidity(inputElement);
-            this._toggleButtonState(inputList, buttonElement);
+            this._toggleButtonState();
         });
     });
   }
 
   //Публичный метод очистки формы 
   resetForm = () => {
-    const inputList = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
-    const buttonElement = this._form.querySelector(`.${this._submitButtonSelector}`);
-
-    this._toggleButtonState(inputList, buttonElement);
+    this._toggleButtonState();
     
-    inputList.forEach(inputElement => {
+    this._inputList.forEach(inputElement => {
       this._hideError(inputElement);
     });
   }
