@@ -4,12 +4,12 @@
   display: flex;
   text-align: left;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 @media screen and (max-width: 320px) {
   .profile {
     text-align: center;
-    padding-top: 22px;
   }
 }

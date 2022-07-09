@@ -9,3 +9,9 @@
     max-width: 300px;
   }
 }
+
+@media screen and (max-width: 912px) {
+  .popup__figure  {
+    max-width: 75%;
+  }
+}
