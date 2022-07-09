@@ -59,7 +59,7 @@ class FormValidator {
     if (this._hasInvalidInput(inputList)) {
       this._disableSubmitButton(buttonElement, this._inactiveButtonClass);
     } else {
-      this._enableSubmitButton(buttonElement, this._inactiveButtonClass)
+      this._enableSubmitButton(buttonElement, this._inactiveButtonClass);
     }
   }
 
