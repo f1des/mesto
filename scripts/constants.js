@@ -1,4 +1,4 @@
-const templateSelector = '.template';
+const templateSelector = '.template__cards';
 
 const initialCards = [
   {
@@ -35,4 +35,4 @@ const objValidation = {
   errorClass: 'popup__error_visible'             
 }
 
-export { initialCards, objValidation };
+export { initialCards, objValidation, templateSelector };
