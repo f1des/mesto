@@ -1,8 +1,7 @@
 .header {  
-  margin: 45px 0 0;
+  margin: 45px auto 0;
   max-width: 880px;
   min-height: 74px;
-  padding: 0 200px;
 }
 
 .header:after {
@@ -14,13 +13,7 @@
 
 @media screen and (max-width: 1024px) {
   .header {
-      padding: 0 88px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .header {
-      padding: 0 44px;
+      padding: 0 28px;
   }
 }
 
