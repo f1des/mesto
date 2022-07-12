@@ -10,7 +10,7 @@
   transition: opacity .7s linear, visibility .7s linear;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 525px) {
   .popup {
     padding: 0 19px;
   }
