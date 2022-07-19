@@ -1,3 +1,4 @@
+import '../pages/index.css';
 import { initialCards, objValidation, templateSelector } from './constants.js';
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';

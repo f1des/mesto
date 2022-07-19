@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./pages/index.css" rel="stylesheet"/>
+    <!-- <link href="./pages/index.css" rel="stylesheet"/> -->
     <title>Место</title>
   </head>
   <body class="page">    
     <header class="header">
-      <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia">
+      <!-- <img src="./images/header-logo.svg" class="logo" alt="Логотип Mesto Russia"> -->
+      <img src="<%=require('./images/header-logo.svg')%>" class="logo" alt="Логотип Mesto Russia">
+
     </header>
 
     <div class="container">
       <main class="content">
         <section class="profile"> 
-          <img src="./images/profile-avatar.jpg" alt="Портрет Жак-Ив Кусто" class="profile__image"/>
+          <img src="<%=require('./images/profile-avatar.jpg')%>" alt="Портрет Жак-Ив Кусто" class="profile__image"/>
           <div class="profile__about">            
             <div class="profile__wrapper">
               <h1 class="profile__name">Жак-Ив Кусто</h1>

@@ -1,0 +1,39 @@
+{
+  "name": "yandex_praktikum",
+  "version": "0.0.1",
+  "description": "* Адаптивный одностраничный сайт, созданный по [первому](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1) и [второму](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1) макетам Figma. Сайт оптимизирован для просмотра на экранах популярных размеров. При вёрстке использован подход Desktop First.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f1des/mesto.git"
+  },
+  "author": "Anton Samsonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f1des/mesto/issues"
+  },
+  "homepage": "https://github.com/f1des/mesto#readme",
+  "dependencies": {
+    "core-js": "^3.23.5",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.12",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
