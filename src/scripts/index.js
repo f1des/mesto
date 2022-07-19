@@ -1,7 +1,7 @@
 import '../pages/index.css';
-import { initialCards, objValidation, templateSelector } from './constants.js';
-import FormValidator from './FormValidator.js';
-import Card from './Card.js';
+import { initialCards, objValidation, templateSelector } from './utlis/constants.js';
+import FormValidator from './components/FormValidator.js';
+import Card from './components/Card.js';
 
 window.addEventListener('DOMContentLoaded', function init () {
   window.removeEventListener('DOMContentLoaded', init);  
